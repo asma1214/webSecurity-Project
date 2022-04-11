@@ -10,7 +10,7 @@
   </div>
 	 
   <form method="post" action="login.php">
-  	<?php include('errors.php'); ?>
+  	<?php include('error.php'); ?>
   	<div class="input-group">
   		<label>Username</label>
   		<input type="text" name="username" >
