@@ -25,7 +25,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.css?v=<?php echo time(); ?>" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: MyResume - v4.7.0
@@ -46,19 +46,31 @@
     <nav id="navbar" class="navbar nav-menu">
       <ul>
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="../Login/loginPage.php" class="nav-link scrollto"><i class=" bx bx-log-in-circle"></i> <span>Login</span></a></li>
-        <li><a href="../Login/registerPage.php" class="nav-link scrollto"><i class=" bx bx-user-plus"></i> <span>Sign up</span></a></li>
-
         <li><a href="#about" class="nav-link scrollto"><i class="bx bx-question-mark"></i> <span>About</span></a></li>
-        <!-- <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li> -->
-
         <li><a href="items.php" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
         <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
         <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
       </ul>
-    </nav><!-- .nav-menu -->
+    </nav> 
+    <!-- .nav-menu  -->
 
-  </header><!-- End Header -->
+  </header> 
+  <!-- End Header -->
+
+
+  <header id="header2" class="d-flex flex-row justify-content-center">
+
+    <nav id="navbar" class="navbar nav-menu1">
+  <ul>
+    <li><a href="../Login/loginPage.php" class="nav-link scrollto"><i class=" bx bx-log-in-circle"></i> <span>Login</span></a></li>
+    <li><a href="../Login/registerPage.php" class="nav-link scrollto"><i class=" bx bx-user-plus"></i> <span>Sign up</span></a></li>
+  </ul>
+</nav>
+<!-- .nav-menu -->
+
+</header>
+<!-- End Header -->
+
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center">
