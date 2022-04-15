@@ -46,9 +46,13 @@
     <nav id="navbar" class="navbar nav-menu">
       <ul>
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+        <li><a href="../Login/loginPage.php" class="nav-link scrollto"><i class=" bx bx-log-in-circle"></i> <span>Login</span></a></li>
+        <li><a href="../Login/registerPage.php" class="nav-link scrollto"><i class=" bx bx-user-plus"></i> <span>Sign up</span></a></li>
+
+        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-question-mark"></i> <span>About</span></a></li>
         <!-- <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li> -->
-        <li><a href="items.html" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Miners</span></a></li>
+
+        <li><a href="items.php" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
         <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
         <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
       </ul>
