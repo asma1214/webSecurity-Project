@@ -4,7 +4,7 @@
     // Check for submit
     if(isset($_POST['submit'])){
         // Get form data
-        $ID = mysqli_real_escape_string($conn, $_POST['ID']);
+        $ID = uniqid();
         $username = mysqli_real_escape_string($conn, $_POST['username']);
         $password = mysqli_real_escape_string($conn, $_POST['password']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
