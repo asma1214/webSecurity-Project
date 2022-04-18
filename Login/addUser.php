@@ -4,13 +4,13 @@
     // Check for submit
     if(isset($_POST['submit'])){
         // Get form data
-        $update_id = mysqli_real_escape_string($conn, $_POST['update_id']);
-        $title = mysqli_real_escape_string($conn, $_POST['title']);
-        $body = mysqli_real_escape_string($conn, $_POST['body']);
-        $author = mysqli_real_escape_string($conn, $_POST['author']);
+        $ID = uniqid();
+        $username = mysqli_real_escape_string($conn, $_POST['username']);
+        $password = mysqli_real_escape_string($conn, $_POST['password']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
      
-        $query = "UPDATE posts SET title='$title', author='$author', body='$body' WHERE id = {$update_id}";
-        define('ROOT_URL', 'http://localhost:6060/updatetrial.php');
+        $query = "INSERT users SET ID='$ID', username='$username', password='$password' ";
+        define('ROOT_URL', 'http://localhost:6060/webSecurity-Project/MyResume/');
         if(mysqli_query($conn, $query)){
             header('Location: '.ROOT_URL.'');
         } else {
