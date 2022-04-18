@@ -1,5 +1,5 @@
 <?php
-  include('connectDB.php'); 
+  include('../connectDB.php'); 
 
     // Check for submit
     if(isset($_POST['submit'])){
@@ -10,7 +10,7 @@
         $email = mysqli_real_escape_string($conn, $_POST['email']);
      
         $query = "INSERT users SET ID='$ID', username='$username', password='$password' ";
-        define('ROOT_URL', 'http://localhost:6060/webSecurity-Project/MyResume/');
+        define('ROOT_URL', '../MyResume/home.php');
         if(mysqli_query($conn, $query)){
             header('Location: '.ROOT_URL.'');
         } else {
