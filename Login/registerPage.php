@@ -52,7 +52,7 @@
                     <p class="text-center small">Enter your personal details to create account</p>
                   </div>
                   <br> 
-                  <form action="" method="post"> 
+                  <form action="add.php" method="post"> 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
                       <div class="input-group has-validation">
