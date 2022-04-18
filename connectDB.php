@@ -1,6 +1,6 @@
 <?php
     // Create Connection
-    $conn = mysqli_connect('localhost', 'Asmaa', '123456', 'webdb'); //add your name in username
+    $conn = mysqli_connect('localhost', 'miners', 'backhome@2', 'webdb'); //add your name in username
     // Check Connection
     if(mysqli_connect_errno()){
         // Connection Failed
