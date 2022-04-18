@@ -25,7 +25,7 @@
   <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
-  
+
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -46,11 +46,11 @@
 
 <nav id="navbar" class="navbar nav-menu">
   <ul>
-    <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-    <li><a href="#about" class="nav-link scrollto"><i class="bx bx-question-mark"></i> <span>About</span></a></li>
-    <li><a href="items.php" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
-    <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-    <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+    <li><a href="../MyResume/home.php" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+    <li><a href="../MyResume/home.php#about" class="nav-link scrollto"><i class="bx bx-question-mark"></i> <span>About</span></a></li>
+    <li><a href="../MyResume/items.php" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
+    <li><a href="../MyResume/home.php#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+    <li><a href="../MyResume/home.php#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
   </ul>
 </nav> 
 <!-- .nav-menu  -->
