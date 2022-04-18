@@ -9,7 +9,7 @@
         $password = mysqli_real_escape_string($conn, $_POST['password']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
      
-        $query = "INSERT users SET ID='$ID', username='$username', password='$password' , email='$email' , ID='u' ";
+        $query = "INSERT users SET ID='$ID', username='$username', password='$password' , email='$email' , Pr='u' ";
         define('ROOT_URL', '../MyResume/home.php');
         if(mysqli_query($conn, $query)){
             header('Location: '.ROOT_URL.'');
