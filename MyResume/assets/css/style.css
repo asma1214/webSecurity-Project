@@ -241,7 +241,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .nav-menu1 a span, .nav-menu1 a:focus span {
     display: none;
-    color: #fff;
+    color: rgb(0, 0, 0);
   }
 }
 .nav-menu a:hover, .nav-menu .active, .nav-menu .active:focus, .nav-menu li:hover > a {
@@ -262,16 +262,15 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   color: #fff;
 }
-.nav-menu1 a:hover, .nav-menu1 li:hover > a {
+.nav-menu1 a, .nav-menu1 li:hover > a {
   width: 100%;
-  color: #fff;
 }
 .nav-menu a:hover span, .nav-menu li:hover > a span {
   display: block;
 }
-.nav-menu1 a:hover span, .nav-menu1x li:hover > a span {
+.nav-menu1 a span, .nav-menu1x li:hover > a span {
   display: block;
-}
+  }
 
 /**
 * Mobile Navigation 
