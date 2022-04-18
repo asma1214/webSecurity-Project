@@ -3,6 +3,6 @@
 	define('DB_HOST', 'localhost');
 	define('DB_USER', 'miners');
 	define('DB_PASS', 'Backhome@2');
-	define('DB_NAME', 'crypto miners users');
+	define('DB_NAME', 'webdb');
     
 ?>
