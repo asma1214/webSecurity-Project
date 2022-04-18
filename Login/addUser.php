@@ -1,5 +1,5 @@
 <?php
-  include('webSecurity-Project\DB.php'); 
+  include('connectDB.php'); 
 
     // Check for submit
     if(isset($_POST['submit'])){
