@@ -1,3 +1,8 @@
+<?php
+    require ('../connectDB.php');
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
