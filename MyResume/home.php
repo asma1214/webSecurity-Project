@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,8 +67,13 @@
 
     <nav id="navbar" class="navbar nav-menu1">
   <ul>
+    <?php if(isset($_SESSION['userId'])){?>
+    <li><a href="../Login/loginPage.php" class="nav-link scrollto"><i class=" bx bxs-user-account"></i> <span><?php echo "Hi " . $_SESSION['name'] . " !"?></span></a></li>
+    <li><a href="../Login/destroy.php" name="logout" class="nav-link scrollto"><i class=" bx bx-user-plus"></i> <span>Log out</span></a></li>
+  <?php } else{?>
     <li><a href="../Login/loginPage.php" class="nav-link scrollto"><i class=" bx bx-log-in-circle"></i> <span>Login</span></a></li>
     <li><a href="../Login/registerPage.php" class="nav-link scrollto"><i class=" bx bx-user-plus"></i> <span>Sign up</span></a></li>
+ <?php }?>
   </ul>
 </nav>
 <!-- .nav-menu -->
