@@ -2,8 +2,8 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 16, 2022 at 03:05 PM
+-- Host: localhost
+-- Generation Time: Apr 19, 2022 at 12:56 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `users`
+-- Database: `webdb`
 --
 
 -- --------------------------------------------------------
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `ID` varchar(4) NOT NULL,
+  `name` varchar(250) NOT NULL,
   `username` varchar(10) NOT NULL,
   `password` varchar(8) NOT NULL,
   `email` varchar(30) NOT NULL,
@@ -39,15 +40,25 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`ID`, `username`, `password`, `email`, `Pr`) VALUES
-('7252', 'Adam@600', 'A600@mad', 'Adam_600@hotmail.com', 'a'),
-('8632', 'blackrose', 'bbrose@3', 'Blackrose.30@hotmail.com', 'u'),
-('8653', 'jojo_1988', 'jhffj88_', 'Najlaa_1988@hotmail.com', 'u'),
-('8251', 'Mary_6', 'joke@hom', 'Maryu_7@hotmail.com', 'a'),
-('4321', 'mazew_1', 'wezam', 'mazew_2@hotmail.com', 'u'),
-('8634', 'moon_98', 'Mdon89', 'Moon@hotmail.com', 'u'),
-('7325', 'Nony4@5', 'Nony2@kk', 'Nony_2000@hotmail.com', 'u'),
-('7862', 'safwan', 'backscho', 'Safwan_56@gmail.com', 'a');
+INSERT INTO `users` (`ID`, `name`, `username`, `password`, `email`, `Pr`) VALUES
+('4321', 'munirah', 'mazew_1', 'wezam', 'mazew_2@hotmail.com', 'u'),
+('7252', 'Adam', 'Adam@600', 'A600@mad', 'Adam_600@hotmail.com', 'a'),
+('7325', 'Nawal', 'Nony4@5', 'Nony2@kk', 'Nony_2000@hotmail.com', 'u'),
+('7862', 'safwan', 'safwan700', 'backscho', 'Safwan_56@gmail.com', 'a'),
+('8251', 'Ahmad', 'Mary_6', 'joke@hom', 'Maryu_7@hotmail.com', 'a'),
+('8632', 'Nora', 'blackrose', 'bbrose@3', 'Blackrose.30@hotmail.com', 'u'),
+('8634', 'Mona', 'moon_98', 'Mdon89', 'Moon@hotmail.com', 'u'),
+('8653', 'jomanah', 'jojo_1988', 'jhffj88_', 'Najlaa_1988@hotmail.com', 'u');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD UNIQUE KEY `ID` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
