@@ -12,6 +12,7 @@
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -25,7 +26,10 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <!-- <link href="assets/css/style2.css" rel="stylesheet"> -->
+
+  <link href="assets/css/style.css?v=<?php echo time(); ?>" rel="stylesheet">
+  
 </head>
 
 <body>
@@ -68,12 +72,7 @@
 	id="basic-addon2"><img src ="assets/img/search.webp" width="20"</button>
   </div>
 </form> -->
-<div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div>
+
 
 <?php
 
@@ -95,6 +94,15 @@ include('../connectDB.php');
           <h2>Miners</h2>
           <p>Want to start Mining in Saudi Arabia, Use our world class mining facility.</p>
         </div>
+
+        <div class="search-bar">
+      <form class="search-form d-flex align-items-center searchBar" method="POST" action="#">
+        <!-- <input type="text" name="query" placeholder="Search" title="Enter search keyword"> -->
+        <!-- <button type="submit" title="Search"><i class="bi bi-search"></i></button> -->
+        <input type="search" required>
+        <i class="fa fa-search"></i>
+     </form>
+    </div>
 
       <div class="row">
           <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
