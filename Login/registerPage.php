@@ -51,7 +51,7 @@
                     <p class="text-center small">Enter your personal details to create account</p>
                   </div>
                   <br> 
-                  <form action="addUser.php" method="post"> 
+                  <form action="addUser.php" method="post">  
 
                   <div class="col-12">
                       <label for="yourEmail" class="form-label">Your Name</label>
