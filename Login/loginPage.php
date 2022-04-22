@@ -1,7 +1,8 @@
 <?php
-    require ('../connectDB.php');
-  
     session_start();
+    // require ('../connectDB.php');
+    include ('loginQuery.php')
+  
 
 
 
@@ -48,7 +49,7 @@
   <ul>
     <li><a href="../MyResume/home.php" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
     <li><a href="../MyResume/home.php#about" class="nav-link scrollto"><i class="bx bx-question-mark"></i> <span>About</span></a></li>
-    <li><a href="../MyResume/items.php" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
+    <li><a href="<?php $_SERVER['PHP_SELF'] ?>" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
     <li><a href="../MyResume/home.php#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
     <li><a href="../MyResume/home.php#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
   </ul>
@@ -72,10 +73,10 @@
 
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                    <p class="text-center small">Enter your username & password to login</p>
+                    <p class="text-center small">to See all news !</p>
                   </div>
 
-                  <form action="loginQuery.php" method = 'POST' class="row g-3 needs-validation" novalidate>
+                  <form action="<?php $_SERVER['PHP_SELF'] ?>" method = 'POST' class="row g-3 needs-validation" novalidate>
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
                       <div class="input-group has-validation">
@@ -90,11 +91,11 @@
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
+                    <div class="errorMsg col-12"><?php if(isset($Error)) echo $Error; ?></div>
 
                     <div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Remember me</label>
                       </div>
                     </div>
                     <div class="col-12">
