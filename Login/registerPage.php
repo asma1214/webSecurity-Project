@@ -1,3 +1,7 @@
+<?php 
+include ('addUser.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +30,7 @@
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.css?v=<?php echo time(); ?>" rel="stylesheet">
 
 
 </head>
@@ -51,7 +55,7 @@
                     <p class="text-center small">Enter your personal details to create account</p>
                   </div>
                   <br> 
-                  <form action="addUser.php" method="POST"> 
+                  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST"> 
 
                   <div class="col-12">
                       <label for="yourEmail" class="form-label">Your Name</label>
@@ -69,6 +73,7 @@
                         <div class="invalid-feedback">Please choose a username.</div>
                       </div>
                     </div>
+                    <div class="errorMsg col-12"><?php if(isset($usernameError)) echo $usernameError; ?></div>
                  
                      <br> 
                     <div class="col-12">
@@ -76,6 +81,7 @@
                       <input type="email" name="email" class="form-control" id="yourEmail" required>
                       <div class="invalid-feedback">Please enter a valid Email adddress!</div>
                     </div>
+                    <div class="errorMsg col-12"><?php if(isset($emailError)) echo $emailError; ?></div>
 
                     <br> 
 
