@@ -52,6 +52,15 @@
                   </div>
                   <br> 
                   <form action="addUser.php" method="post"> 
+
+                  <div class="col-12">
+                      <label for="yourEmail" class="form-label">Your Name</label>
+                      <input type="text" name="name" class="form-control" id="yourName" required>
+                      <div class="invalid-feedback">Please write your name </div>
+                    </div>
+
+                    <br> 
+
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
                       <div class="input-group has-validation">
