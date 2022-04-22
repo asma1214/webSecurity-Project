@@ -125,16 +125,6 @@ h1, h2, h3, h4, h5, h6 {
   overflow-y: auto;
 }
 
-#header2 {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9997;
-  transition: all 0.5s;
-  padding: 25px;
-  overflow-y: auto;
-}
 @media (max-width: 992px) {
   #header {
     width: 300px;
@@ -159,29 +149,18 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   display: block;
 }
-.nav-menu1 {
-  padding: 0;
-  display: block;
-}
+
 .nav-menu * {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.nav-menu1 * {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+
 .nav-menu > ul > li {
   position: relative;
   white-space: nowrap;
 }
-.nav-menu1 > ul > li {
-  position: relative;
-  white-space: nowrap;
-}
+
 .nav-menu a, .nav-menu a:focus {
   display: flex;
   align-items: center;
@@ -197,35 +176,16 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   transition: 0.3s;
 }
-.nav-menu1 a, .nav-menu1 a:focus {
-  display: flex;
-  align-items: center;
-  color: #45505b;
-  padding: 10px 18px;
-  margin-left: 8px;
-  transition: 0.3s;
-  font-size: 15px;
-  border-radius: 50px;
-  background: #f2f3f5;
-  height: 56px;
-  width: 100%;
-  overflow: hidden;
-  transition: 0.3s;
-}
+
 .nav-menu a i, .nav-menu a:focus i {
   font-size: 20px;
 }
-.nav-menu1 a i, .nav-menu1 a:focus i {
-  font-size: 20px;
-}
+
 .nav-menu a span, .nav-menu a:focus span {
   padding: 0 5px 0 7px;
   color: #45505b;
 }
-.nav-menu1 a span, .nav-menu1 a:focus span {
-  padding: 0 5px 0 7px;
-  color: #45505b;
-}
+
 @media (min-width: 992px) {
   .nav-menu a, .nav-menu a:focus {
     width: 56px;
@@ -235,42 +195,25 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
   }
 }
-@media (min-width: 992px) {
-  .nav-menu1 a, .nav-menu1 a:focus {
-    width: 56px;
-  }
-  .nav-menu1 a span, .nav-menu1 a:focus span {
-    display: none;
-    color: rgb(0, 0, 0);
-  }
-}
+
 .nav-menu a:hover, .nav-menu .active, .nav-menu .active:focus, .nav-menu li:hover > a {
   color: #fff;
   background: #0678e3;
 }
-.nav-menu1 a:hover, .nav-menu1 .active, .nav-menu1 .active:focus, .nav-menu1 li:hover > a {
-  color: #fff;
-  background: #0678e3;
-}
+
 .nav-menu a:hover span, .nav-menu .active span, .nav-menu .active:focus span, .nav-menu li:hover > a span {
   color: #fff;
 }
-.nav-menu1 a:hover span, .nav-menu1 .active span, .nav-menu1 .active:focus span, .nav-menu1 li:hover > a span {
-  color: #fff;
-}
+
 .nav-menu a:hover, .nav-menu li:hover > a {
   width: 100%;
   color: #fff;
 }
-.nav-menu1 a, .nav-menu1 li:hover > a {
-  width: 100%;
-}
+
 .nav-menu a:hover span, .nav-menu li:hover > a span {
   display: block;
 }
-.nav-menu1 a span, .nav-menu1x li:hover > a span {
-  display: block;
-  }
+
 
 /**
 * Mobile Navigation 
