@@ -86,48 +86,44 @@ include('../connectDB.php');
           </form>
         </div>
         <?php
+        //Get the search Keyword
+        $search= $_POST['search'];
             
-            //Get the search Keyword
-            $search= $_POST['search'];
+        //SQL Query to get foods based on search keyword
+        $sql="SELECT * FROM tools WHERE itemName LIKE '%$search%'";
             
-            //SQL Query to get foods based on search keyword
-            $sql="SELECT * FROM tools WHERE itemName LIKE '%$search%'";
+        //Execute the query
+        $res = mysqli_query($conn, $sql);
             
-            //Execute the query
-            $res = mysqli_query($conn, $sql);
-            
-            //Count Rows
-            $count =mysqli_num_rows($res);
-            //Check whether food available of not
-            if($count>0)
-            {
-                while($row=mysqli_fetch_assoc($res))
-                {
-			        //get the detalis
-      		        $id=$row['id'];
-     	 		        $title=$row['itemName'];
-      		        $price=$row['price'];
-      		        $dec=$row['description'];
-      		        $img=$row['img'];
-                  ?>
-                    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                      <div class="col-lg-4 col-md-6 portfolio-item ">
-                        <div class="portfolio-wrap">
-                          <img src="assets/img/miners/<?php echo $img; ?>" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                              <h4><?php echo $title; ?></h4>
-                                <div class="portfolio-links">
-		
-
-                                  <a href="assets/img/miners/<?php echo $img; ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo $title; ?>"><i class="bx bx-plus"></i></a>
-		                              <a class="portfolio-details-lightbox" href="portfolio-details.php?id=<?php echo $id; ?>"class="portfolio-details-lightbox" data-glightbox="type: external" title="Miner Details"><i class="bx bx-link"></i></a>
-
-
-                                </div>
-                            </div>
+        //Count Rows
+        $count =mysqli_num_rows($res);
+        //Check whether food available of not
+        if($count>0)
+        {
+          while($row=mysqli_fetch_assoc($res))
+          {
+			      //get the detalis
+      		  $id=$row['id'];
+     	 		  $title=$row['itemName'];
+      		  $price=$row['price'];
+      		  $dec=$row['description'];
+      		  $img=$row['img'];
+          ?>
+          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+             <div class="col-lg-4 col-md-6 portfolio-item ">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/miners/<?php echo $img; ?>" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                      <h4><?php echo $title; ?></h4>
+                        <div class="portfolio-links">
+                          <a href="assets/img/miners/<?php echo $img; ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo $title; ?>"><i class="bx bx-plus"></i></a>
+		                      <a class="portfolio-details-lightbox" href="portfolio-details.php?id=<?php echo $id; ?>"class="portfolio-details-lightbox" data-glightbox="type: external" title="Miner Details"><i class="bx bx-link"></i></a>
                         </div>
+                      </div>
                     </div>
-                  <?php
+                  </div>
+          </div>
+                <?php
                 }
             }
             else

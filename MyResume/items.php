@@ -82,12 +82,14 @@ include('../connectDB.php');
         </div>
 
         <div class="search-bar">
-      <form class="search-form d-flex align-items-center searchBar" action="search.php" method="POST" >
-        <!-- <input type="text" name="query" placeholder="Search" title="Enter search keyword"> -->
-        <!-- <button type="submit" title="Search"><i class="bi bi-search"></i></button> -->
-        <input type="search" name="search" required>
-        <i class="fa fa-search"></i>
-     </form>
+          <form class="search-form d-flex align-items-center searchBar" action="items.php?page=search1.php" name="result" method="POST" >
+            <input type="search" name="search" required>
+            <i class="fa fa-search"></i>
+          </form>
+          <?php if(isset($_POST['search'])){
+                include($_GET['page']);
+              }
+       ?>
     </div>
 
       <div class="row">
@@ -123,14 +125,9 @@ include('../connectDB.php');
               </div>
             </div>
           </div>
-<?php endforeach; ?>	
-
-
-
-         
-        </div>
-
-      </div>
+<?php endforeach; ?>	   
+</div>
+</div>
     </section><!-- End Miners Section -->
 
   </main><!-- End #main -->
