@@ -92,12 +92,6 @@
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
                     <div class="errorMsg col-12"><?php if(isset($Error)) echo $Error; ?></div>
-
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                      </div>
-                    </div>
                     <div class="col-12">
                     <input class="btn btn-primary w-100" type="submit" value="Login" name="submit">
                       <!-- <button class="btn btn-primary w-100" type="submit">Login</button> -->
