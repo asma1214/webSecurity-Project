@@ -8,7 +8,9 @@
         $name = mysqli_real_escape_string($conn, $_POST['name']);
         $username = mysqli_real_escape_string($conn, $_POST['username']);
         $password = mysqli_real_escape_string($conn, $_POST['password']);
+        $hashPass= password_hash($password, PASSWORD_DEFAULT);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
+        
         $query2 = "SELECT * FROM users WHERE username = '$username' ";
         $result2 = mysqli_query($conn, $query2);
         $query3 = "SELECT * FROM users WHERE email = '$email' ";
@@ -21,7 +23,7 @@
         }
         else{
           session_start();
-        $query = "INSERT INTO users (ID, name, username, password, email, Pr) VALUES ('$ID', '$name' , '$username', '$password' , '$email' , 'u' )";
+        $query = "INSERT INTO users (ID, name, username, password, email, Pr) VALUES ('$ID', '$name' , '$username', '$hashPass' , '$email' , 'u' )";
         define('ROOT_URL', '../MyResume/home.php');
         if(mysqli_query($conn, $query)){
           $_SESSION['userId'] = $ID;
