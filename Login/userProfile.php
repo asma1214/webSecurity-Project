@@ -10,13 +10,9 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-<<<<<<< HEAD
   <link href="assets/img/bitcoin.png" rel="icon">
 
-=======
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
->>>>>>> 4cc23a26fd14812ed35fcf472aae866dc2a5e05b
+
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -32,11 +28,8 @@
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-<<<<<<< HEAD
-  <link href="assets/css/style.css?v=<?php echo time(); ?>" rel="stylesheet">
-=======
-  <link href="assets/css/style.css" rel="stylesheet">
->>>>>>> 4cc23a26fd14812ed35fcf472aae866dc2a5e05b
+  <link href="assets/css/style1.css?v=<?php echo time(); ?>" rel="stylesheet">
+
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
@@ -54,11 +47,8 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-<<<<<<< HEAD
         <span class="d-none d-lg-block">Bitmain</span>
-=======
-        <span class="d-none d-lg-block">NiceAdmin</span>
->>>>>>> 4cc23a26fd14812ed35fcf472aae866dc2a5e05b
+
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -524,15 +514,9 @@
       <h1>Profile</h1>
       <nav>
         <ol class="breadcrumb">
-<<<<<<< HEAD
           <li class="breadcrumb-item"><a href="../Home/home.php">Home</a></li>
-          <!-- <li class="breadcrumb-item">Users</li> -->
           <li class="breadcrumb-item active"><a href="userProfile.php">Profile</a></li>
-=======
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Users</li>
-          <li class="breadcrumb-item active">Profile</li>
->>>>>>> 4cc23a26fd14812ed35fcf472aae866dc2a5e05b
+
         </ol>
       </nav>
     </div><!-- End Page Title -->

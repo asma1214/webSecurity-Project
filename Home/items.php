@@ -42,7 +42,7 @@
     <nav id="navbar" class="navbar nav-menu">
       <ul>
         <li><a href="home.php" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Account</span></a></li> 
+        <li><a href="../Login//userProfile.php" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Account</span></a></li> 
         <!-- <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li> 
         <li><a href="#miners" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Miners</span></a></li>
         <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
