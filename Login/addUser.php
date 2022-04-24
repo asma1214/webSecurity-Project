@@ -24,7 +24,7 @@
         else{
           session_start();
         $query = "INSERT INTO users (ID, name, username, password, email, Pr) VALUES ('$ID', '$name' , '$username', '$hashPass' , '$email' , 'u' )";
-        define('ROOT_URL', '../MyResume/home.php');
+        define('ROOT_URL', '../Home/home.php');
         if(mysqli_query($conn, $query)){
           $_SESSION['userId'] = $ID;
           $_SESSION['name'] = $name;
