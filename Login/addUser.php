@@ -29,6 +29,7 @@
           $_SESSION['userId'] = $ID;
           $_SESSION['name'] = $name;
           $_SESSION['username'] = $username;
+          $_SESSION['Pr'] = 'u';
           header('Location: ' . ROOT_URL);
         }
          else {
