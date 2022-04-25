@@ -56,12 +56,9 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-<<<<<<< HEAD
-        <span class="d-none d-lg-block">Bitmain</span>
 
-=======
         <span class="d-none d-lg-block">NiceAdmin</span>
->>>>>>> 9274968e2b252f373dce7dc70614df662ec7cac3
+
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -266,15 +263,12 @@
       <h1>Profile</h1>
       <nav>
         <ol class="breadcrumb">
-<<<<<<< HEAD
+
           <li class="breadcrumb-item"><a href="../Home/home.php">Home</a></li>
           <li class="breadcrumb-item active"><a href="userProfile.php">Profile</a></li>
 
-=======
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Users</li>
-          <li class="breadcrumb-item active">Profile</li>
->>>>>>> 9274968e2b252f373dce7dc70614df662ec7cac3
+
+          
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -507,8 +501,14 @@
   <?php include '../Home/Include/footer.php'; ?>
   <!-- End Footer -->
 
+
+  
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+
+  
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
