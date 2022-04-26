@@ -5,8 +5,6 @@
 	//create a query
 	$query = 'SELECT * FROM tools WHERE id = '.$id;
 
-
-
  //get result 
  	$result = mysqli_query($conn, $query);
  	$tool = mysqli_fetch_assoc($result);

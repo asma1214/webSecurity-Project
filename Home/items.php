@@ -1,3 +1,8 @@
+<?php
+
+include('itemQ.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,31 +84,44 @@
                 include($_GET['page']);
               }
        ?>
-       
-    </div>
-    <?php
+    
 
-include('itemQ.php');
-?>
-      
 
+
+
+
+<?php foreach($items as $item) : ?>
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 portfolio-item ">
+            <div class="portfolio-wrap">
+              <img src="assets/img/miners/<?php echo $item['img']; ?>" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4><?php echo $item['itemName']; ?></h4>
+                <div class="portfolio-links">
+		
+
+                  <a href="assets/img/miners/<?php echo $item['img']; ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo $item['itemName']; ?>"><i class="bx bx-plus"></i></a>
+		    <a class="portfolio-details-lightbox" href="details.php?id=<?php echo $item['id']; ?>"class="portfolio-details-lightbox" data-glightbox="type: external" title="Miner Details"><i class="bx bx-link"></i></a>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+<?php endforeach; ?>	   
+</div>
+</div>
     </section><!-- End Miners Section -->
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="container">
-      <h3>Team 2</h3>
-      <p>Asma - Bushra - Noor - Alghadeer - Layan</p>
-      <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <!-- <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> -->
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-    </div>
+  <?php
+
+include('include/footer.php');
+
+?>
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
