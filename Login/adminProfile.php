@@ -83,7 +83,7 @@ session_start();
 
       <ul class="d-flex align-items-center row">        
 
-        <li class="nav-item dropdown pe-3">
+        <li class="nav-item dropdown pe-4">
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
           <?php if(file_exists($r)){?>
                         <img src="userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" class="rounded-circle">
@@ -91,7 +91,7 @@ session_start();
                           <img src="assets/img/image.png" alt="Profile" class="rounded-circle">
                           <?php } ?>
             <!-- <img src="assets/img/image.png" alt="Profile" class="rounded-circle"> -->
-            <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $_SESSION['username'] ?></span>
+            <span class="d-none d-md-block dropdown-toggle ps-1 pe-3" ><?php echo $_SESSION['username'] ?></span>
           </a>
           <!-- End Profile Iamge Icon -->
 
@@ -104,7 +104,7 @@ session_start();
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href=<?php $_SERVER['PHP_SELF'] ?>>
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>
@@ -114,7 +114,7 @@ session_start();
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href=<?php $_SERVER['PHP_SELF'] ?>>
                 <i class="bi bi-gear"></i>
                 <span>Account Settings</span>
               </a>

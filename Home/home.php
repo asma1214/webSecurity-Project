@@ -73,7 +73,7 @@ session_start();
     <li><a href="../Login/profile.php" class="nav-link scrollto"><i class=" bx bxs-user-account"></i> <span><?php echo "Hi " . $_SESSION['name'] . " !"?></span></a></li>
     <li><a href="../Login/destroy.php" name="logout" class="nav-link scrollto"><i class=" bx bx-user-plus"></i> <span>Log out</span></a></li>
     <?php }else {?>
-      <li><a href="../Login/profile.php" class="nav-link scrollto"><i class=" bx bxs-user"></i> <span><?php echo "Hi Admin " . $_SESSION['name'] . " !"?></span></a></li>
+      <li><a href="../Login/adminProfile.php" class="nav-link scrollto"><i class=" bx bxs-user"></i> <span><?php echo "Hi Admin " . $_SESSION['name'] . " !"?></span></a></li>
     <li><a href="../Login/destroy.php" name="logout" class="nav-link scrollto"><i class=" bx bx-user-plus"></i> <span>Log out</span></a></li>
   <?php }} else{?>
     <li><a href="../Login/loginPage.php" class="nav-link scrollto"><i class=" bx bx-log-in-circle"></i> <span>Login</span></a></li>
