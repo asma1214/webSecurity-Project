@@ -70,19 +70,7 @@ session_start();
     </div>
     </div>
     <!-- find Extension of the file -->
-    <?php $file= "assets/img/userImg/" . $_SESSION['username'] . ".png";
-                      $result = glob ($file ,GLOB_BRACE);
-                      // save the path of the file in $r
-                      $r =  $result[0];
-                       
-                     
-
-                      
-                      // save the extension of the file 
-                      // $match = preg_split('/[\.]/', $r);
-                      // $ext = $match[1];
-                      // $fullPath = $r;
-                      ?>
+ 
     <nav class="header-nav">
 
       <ul class="d-flex align-items-center row">        
@@ -168,7 +156,7 @@ session_start();
             <?php if(file_exists($r)){?>
                         <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" class="rounded-circle">
                         <?php } else {?>
-                          <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" class="rounded-circle">
+                          <img src="assets/img/image.png" alt="Profile" class="rounded-circle">
                           <?php } ?>
               <!-- <img src="assets/img/image.png" alt="Profile" class="rounded-circle"> -->
               <h2><?php echo $_SESSION['name'] ?></h2>
@@ -230,6 +218,8 @@ session_start();
                   </div>
                   
                   <form>
+                  
+
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
                       <div class="col-md-8 col-lg-9">
@@ -237,15 +227,15 @@ session_start();
                       </div>
                     </div>
 
-
-
+                   
                     
 
 
                     <div class="row mb-3">
                       <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="email" type="email" class="form-control" id="Email" value=<?php echo $_SESSION['email']?>>
+                        <input name="fullName" type="text" class="form-control" id="fullName" value=<?php echo $_SESSION['name']?>>
+                        
                       </div>
                     </div>
 
