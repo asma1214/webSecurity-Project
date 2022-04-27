@@ -8,7 +8,8 @@
         echo "hello1"; 
         session_start();
 
-        $newPass = $_POST['newpassword']; 
+        $newPass = $_POST['newpassword'];    
+        $newPass= password_hash($password, PASSWORD_DEFAULT);
         $username = $_SESSION['username'];
         echo $_SESSION['username'];
         
