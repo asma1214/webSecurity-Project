@@ -167,7 +167,7 @@ session_start();
                           <?php } ?>
               <!-- <img src="assets/img/image.png" alt="Profile" class="rounded-circle"> -->
               <h2><?php echo $_SESSION['name'] ?></h2>
-              <h3>Adminstror</h3>
+              <h3>User</h3>
              
             </div>
           </div>
@@ -184,12 +184,7 @@ session_start();
                   <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
                 </li>
 
-                <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#add-item">Add item</button>
-                </li>
-                <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#delete-item">Delete item</button>
-                </li>
+              
 
                 <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
@@ -238,26 +233,9 @@ session_start();
                     </div>
 
 
-                    <div class="row mb-3">
-                      <label for="company" class="col-md-4 col-lg-3 col-form-label">Company</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="company" type="text" class="form-control" id="company" value="Bitmain">
-                      </div>
-                    </div>
 
-                    <div class="row mb-3">
-                      <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="job" type="text" class="form-control" id="Job" value="admin">
-                      </div>
-                    </div>
+                    
 
-                    <div class="row mb-3">
-                      <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="country" type="text" class="form-control" id="Country" value="KSA">
-                      </div>
-                    </div>
 
                     <div class="row mb-3">
                       <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
@@ -275,68 +253,11 @@ session_start();
 
                 <div class="tab-pane fade pt-3" id="add-item">
 
-                  <!-- add item Form -->
-                  
-                  <form>
-                    <div class="row mb-4">
-                      <label class="col-md-4 col-lg-3 col-form-label">Name</label>
-                      <div class="col-md-4 col-lg-4">
-                        <input name="name" type="text" class="form-control" id="name">
-                      </div>
-                    </div>
-
-                    <div class="row mb-4">
-                      <label  class="col-md-4 col-lg-3 col-form-label">Price</label>
-                      <div class="col-md-4 col-lg-4">
-                        <input name="price" type="number" class="form-control" id="price">
-                      </div>
-                    </div>
-
-                    <div class="row mb-4">
-                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Quantity</label>
-                      <div class="col-md-4 col-lg-4">
-                        <input name="quantity" type="number" class="form-control" id="num">
-                      </div>
-                    </div>
-
-                    <div class="row mb-4">
-                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">description</label>
-                      <div class="col-md-4 col-lg-4">
-                        <textarea name="quantity" class="form-control" id="num">
-                        </textarea>
-                      </div>
-                    </div>
-
-                    <div class="row mb-4">
-                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Image</label>
-                    <div class="col-md-4 col-lg-4">
-                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>                        </div>
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Add item</button>
-                    </div>
-                    </div>
-                  </form>
-                  <!-- End add item Form -->
+                
 
                 </div>
 
-                <!-- delete item Form -->
-                <div class="tab-pane fade pt-3" id="delete-item">
-
-                  <form>
-                    <div class="row mb-4">
-                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Item ID</label>
-                      <div class="col-md-4 col-lg-4">
-                        <input name="id" type="number" class="form-control" id="itemId">
-                      </div>
-                    </div>
-
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Delete Item</button>
-                    </form><
-                    </div>
-                </div>
-                  <!-- delete settings Form -->
+               
 
 
                   <!-- Change Password Form -->
