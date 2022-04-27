@@ -267,12 +267,12 @@ session_start();
 
                   <!-- Change Password Form -->
                 <div class="tab-pane fade pt-3" id="profile-change-password">
-                  <form>
+                  <form action="editProfile.php" method="$_POST">
 
                     <div class="row mb-4">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
                       <div class="col-md-4 col-lg-4">
-                        <input name="password" type="password" class="form-control" id="currentPassword">
+                        <input name="currentPassword" type="password" class="form-control" id="currentPassword">
                       </div>
                     </div>
 
