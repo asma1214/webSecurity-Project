@@ -69,6 +69,15 @@ session_start();
       </div> -->
     </div>
     </div>
+    <?php $file= "assets/img/userImg/" . $_SESSION['username'] . ".*";
+                      $result = glob ($file ,GLOB_BRACE);
+                      // save the path of the file in $r
+                      $r =  $result[0];
+                      // save the extension of the file 
+                      // $match = preg_split('/[\.]/', $r);
+                      // $ext = $match[1];
+                      // $fullPath = $r;
+                      ?>
     <!-- find Extension of the file -->
  
     <nav class="header-nav">
@@ -81,8 +90,7 @@ session_start();
                         <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" class="rounded-circle">
                         <?php } else {?>
                           <img src="assets/img/image.png" alt="Profile" class="rounded-circle">
-                         
-                          <?php   } ?>
+                          <?php } ?>
             <!-- <img src="assets/img/image.png" alt="Profile" class="rounded-circle"> -->
             <span class="d-none d-md-block dropdown-toggle ps-1 pe-3" ><?php echo $_SESSION['username'] ?></span>
           </a>
@@ -153,6 +161,7 @@ session_start();
 
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+            
             <?php if(file_exists($r)){?>
                         <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" class="rounded-circle">
                         <?php } else {?>
@@ -196,7 +205,7 @@ session_start();
                       
                    
 
-                      <?php if(1){?>
+                      <?php if(file_exists($r)){?>
                         <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" >
                         <?php } else {?>
                           <img src="assets/img/image.png" alt="Profile">

@@ -28,7 +28,7 @@
         $row = mysqli_fetch_array($result);
         
         
-            $query = "UPDATE users SET password='$newPass' WHERE username ='$username'";
+            $query = "UPDATE users SET password='$newPass1' WHERE username ='$username'";
             define('ROOT_URL', '../Home/home.php');
             if(mysqli_query($conn, $query)){
                 header('Location: '.ROOT_URL.'');
