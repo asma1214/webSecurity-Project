@@ -1,3 +1,9 @@
+
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,19 +11,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Users / Profile - NiceAdmin Bootstrap Template</title>
+  <title>Admin Profile</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-<<<<<<< HEAD
   <link href="assets/img/bitcoin.png" rel="icon">
 
-
-=======
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
->>>>>>> 9274968e2b252f373dce7dc70614df662ec7cac3
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -33,12 +33,7 @@
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-<<<<<<< HEAD
   <link href="assets/css/style1.css?v=<?php echo time(); ?>" rel="stylesheet">
-
-=======
-  <link href="assets/css/style.css" rel="stylesheet">
->>>>>>> 9274968e2b252f373dce7dc70614df662ec7cac3
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
@@ -48,214 +43,104 @@
   ======================================================== -->
 </head>
 
-<body>
+<body class="toggle-sidebar">
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-
-        <span class="d-none d-lg-block">NiceAdmin</span>
-
+      <a href="../Home/home.php" class="logo d-flex align-items-center">
+        <img src="assets/img/bitcoin.png" alt="">
+        <span class="d-none d-lg-block">Bitmain</span>
       </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
+
     </div><!-- End Logo -->
+    <div class="col-8">  
+      <div class="row">
+      <!-- <div class="d-flex justify-content-center">
+        <div class="col-3">
+          <i class="bi bi-plus-circle-fill"></i>
+      <a href="">Add new item</a>
+      </div>
+      <div class="col-3">
+      <i class="bi bi-dash-circle-fill"></i>
+      <a href="">Delete item</a>
+      </div>
+      </div> -->
+    </div>
+    </div>
+    <!-- find Extension of the file -->
+    <?php $file= "userImg/" . $_SESSION['username'] . ".*";
+                      $result = glob ($file ,GLOB_BRACE);
+                      // save the path of the file in $r
+                      $r =  $result[0];
+                      // save the extension of the file 
+                      // $match = preg_split('/[\.]/', $r);
+                      // $ext = $match[1];
+                      // $fullPath = $r;
+                      ?>
+    <nav class="header-nav">
 
-    
+      <ul class="d-flex align-items-center row">        
 
-    <nav class="header-nav ms-auto">
-      <ul class="d-flex align-items-center">
-
-        <li class="nav-item d-block d-lg-none">
-          <a class="nav-link nav-icon search-bar-toggle " href="#">
-            <i class="bi bi-search"></i>
+        <li class="nav-item dropdown pe-4">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+          <?php if(file_exists($r)){?>
+                        <img src="userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" class="rounded-circle">
+                        <?php } else {?>
+                          <img src="assets/img/image.png" alt="Profile" class="rounded-circle">
+                          <?php } ?>
+            <!-- <img src="assets/img/image.png" alt="Profile" class="rounded-circle"> -->
+            <span class="d-none d-md-block dropdown-toggle ps-1 pe-3" ><?php echo $_SESSION['username'] ?></span>
           </a>
-        </li><!-- End Search Icon-->
+          <!-- End Profile Iamge Icon -->
 
-        <li class="nav-item dropdown">
-
-         
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              You have 4 new notifications
-              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+              <h6><?php echo $_SESSION['name'] ?></h6>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
-            <li class="notification-item">
-              <i class="bi bi-exclamation-circle text-warning"></i>
-              <div>
-                <h4>Lorem Ipsum</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>30 min. ago</p>
-              </div>
-            </li>
-
             <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-x-circle text-danger"></i>
-              <div>
-                <h4>Atque rerum nesciunt</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>1 hr. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-check-circle text-success"></i>
-              <div>
-                <h4>Sit rerum fuga</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>2 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-info-circle text-primary"></i>
-              <div>
-                <h4>Dicta reprehenderit</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>4 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li class="dropdown-footer">
-              <a href="#">Show all notifications</a>
-            </li>
-
-          </ul><!-- End Notification Dropdown Items -->
-
-        </li><!-- End Notification Nav -->
-
-        <li class="nav-item dropdown">
-
-         
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-            <li class="dropdown-header">
-              You have 3 new messages
-              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>Maria Hudson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>4 hrs. ago</p>
-                </div>
+              <a class="dropdown-item d-flex align-items-center" href=<?php $_SERVER['PHP_SELF'] ?>>
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
               </a>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
-            <li class="message-item">
-              <a href="#">
-                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>Anna Nelson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>6 hrs. ago</p>
-                </div>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href=<?php $_SERVER['PHP_SELF'] ?>>
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
               </a>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>David Muldon</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>8 hrs. ago</p>
-                </div>
-              </a>
-            </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
-            <li class="dropdown-footer">
-              <a href="#">Show all messages</a>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="destroy.php">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
             </li>
 
-          </ul><!-- End Messages Dropdown Items -->
-
-        </li><!-- End Messages Nav -->
-
-       
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
 
       </ul>
     </nav><!-- End Icons Navigation -->
 
   </header><!-- End Header -->
 
-  <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
-
-    <ul class="sidebar-nav" id="sidebar-nav">
-
-      
-  
-
-
-
-      <li class="nav-heading">Pages</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../Home/home.php">
-          <i class="bi bi-home-earmark"></i>
-          <span>Home</span>
-        </a>
-      </li><!-- End Blank Page Nav -->
-
-     
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
-          <i class="bi bi-question-circle"></i>
-          <span>F.A.Q</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
-          <i class="bi bi-envelope"></i>
-          <span>Contact</span>
-        </a>
-      </li><!-- End Contact Page Nav -->
-
-     
-
-    </ul>
-
-  </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
@@ -263,24 +148,31 @@
       <h1>Profile</h1>
       <nav>
         <ol class="breadcrumb">
-
           <li class="breadcrumb-item"><a href="../Home/home.php">Home</a></li>
-          <li class="breadcrumb-item active"><a href="userProfile.php">Profile</a></li>
-
-
-          
+          <li class="breadcrumb-item active"><a href=<?php $_SERVER['PHP_SELF'] ?>>Profile</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
     <section class="section profile">
       <div class="row">
-        
+        <div class="col-xl-4">
 
-          
+          <div class="card">
+            <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+            <?php if(file_exists($r)){?>
+                        <img src="userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" class="rounded-circle">
+                        <?php } else {?>
+                          <img src="assets/img/image.png" alt="Profile" class="rounded-circle">
+                          <?php } ?>
+              <!-- <img src="assets/img/image.png" alt="Profile" class="rounded-circle"> -->
+              <h2><?php echo $_SESSION['name'] ?></h2>
+              <h3>Adminstror</h3>
+             
+            </div>
+          </div>
 
-        
-
+        </div>
         <div class="col-xl-8">
 
           <div class="card">
@@ -289,11 +181,14 @@
               <ul class="nav nav-tabs nav-tabs-bordered">
 
                 <li class="nav-item">
-                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
+                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
                 </li>
 
                 <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#add-item">Add item</button>
+                </li>
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#delete-item">Delete item</button>
                 </li>
 
                 <li class="nav-item">
@@ -303,142 +198,71 @@
               </ul>
               <div class="tab-content pt-2">
 
-                <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                  <h5 class="card-title">About</h5>
-                  <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
+                <div class="tab-pane fade show active profile-edit" id="profile-edit">
 
-                  <h5 class="card-title">Profile Details</h5>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                    <div class="col-lg-9 col-md-8">Kevin Anderson</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Company</div>
-                    <div class="col-lg-9 col-md-8">Lueilwitz, Wisoky and Leuschke</div>
-                  </div>
-
-                  
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Country</div>
-                    <div class="col-lg-9 col-md-8">USA</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Address</div>
-                    <div class="col-lg-9 col-md-8">A108 Adam Street, New York, NY 535022</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Phone</div>
-                    <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Email</div>
-                    <div class="col-lg-9 col-md-8">k.anderson@example.com</div>
-                  </div>
-
-                </div>
-
-                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  <form>
-                    <div class="row mb-3">
-                      <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
-                      <div class="col-md-8 col-lg-9">
-                        <img src="assets/img/profile-img.jpg" alt="Profile">
-                        <div class="pt-2">
-                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-                          <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
-                        </div>
+                  <div class="row mb-3">
+                    <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                    <div class="col-md-5 col-lg-5">
+                      
+                      
+
+                      <?php if(file_exists($r)){?>
+                        <img src="userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile">
+                        <?php } else {?>
+                          <img src="assets/img/image.png" alt="Profile">
+                          <?php } ?>
+                      <div class="pt-3 row mb-2">
+                        <form action="upload.php" method="POST" enctype="multipart/form-data">
+                          <!-- <button class="btn btn-primary btn-sm bi bi-upload" type="file" name="upload"></button> -->
+                          <input type="file" class="form-control" name="upload">
+                          <br>
+                          <!-- <input type="submit" value="Upload" name="submit"> -->
+                          <button class="btn btn-primary btn-sm" type="submit" name="submit">Upload</button>
+
+                          <!-- <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a> -->
+                          <!-- <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a> -->
+                        </form>   
+                        
                       </div>
                     </div>
-
+                  </div>
+                  
+                  <form>
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" value="Kevin Anderson">
+                        <input name="fullName" type="text" class="form-control" id="fullName" value=<?php echo $_SESSION['name']?>>
                       </div>
                     </div>
 
-                    <div class="row mb-3">
-                      <label for="about" class="col-md-4 col-lg-3 col-form-label">About</label>
-                      <div class="col-md-8 col-lg-9">
-                        <textarea name="about" class="form-control" id="about" style="height: 100px">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</textarea>
-                      </div>
-                    </div>
 
                     <div class="row mb-3">
                       <label for="company" class="col-md-4 col-lg-3 col-form-label">Company</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="company" type="text" class="form-control" id="company" value="Lueilwitz, Wisoky and Leuschke">
+                        <input name="company" type="text" class="form-control" id="company" value="Bitmain">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="job" type="text" class="form-control" id="Job" value="Web Designer">
+                        <input name="job" type="text" class="form-control" id="Job" value="admin">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="country" type="text" class="form-control" id="Country" value="USA">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="Address" class="col-md-4 col-lg-3 col-form-label">Address</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="address" type="text" class="form-control" id="Address" value="A108 Adam Street, New York, NY 535022">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="phone" type="text" class="form-control" id="Phone" value="(436) 486-3538 x29071">
+                        <input name="country" type="text" class="form-control" id="Country" value="KSA">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="email" type="email" class="form-control" id="Email" value="k.anderson@example.com">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Twitter Profile</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="twitter" type="text" class="form-control" id="Twitter" value="https://twitter.com/#">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="Facebook" class="col-md-4 col-lg-3 col-form-label">Facebook Profile</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="facebook" type="text" class="form-control" id="Facebook" value="https://facebook.com/#">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="Instagram" class="col-md-4 col-lg-3 col-form-label">Instagram Profile</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="instagram" type="text" class="form-control" id="Instagram" value="https://instagram.com/#">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="Linkedin" class="col-md-4 col-lg-3 col-form-label">Linkedin Profile</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="linkedin" type="text" class="form-control" id="Linkedin" value="https://linkedin.com/#">
+                        <input name="email" type="email" class="form-control" id="Email" value=<?php echo $_SESSION['email']?>>
                       </div>
                     </div>
 
@@ -449,32 +273,93 @@
 
                 </div>
 
+                <div class="tab-pane fade pt-3" id="add-item">
+
+                  <!-- add item Form -->
+                  
+                  <form>
+                    <div class="row mb-4">
+                      <label class="col-md-4 col-lg-3 col-form-label">Name</label>
+                      <div class="col-md-4 col-lg-4">
+                        <input name="name" type="text" class="form-control" id="name">
+                      </div>
+                    </div>
+
+                    <div class="row mb-4">
+                      <label  class="col-md-4 col-lg-3 col-form-label">Price</label>
+                      <div class="col-md-4 col-lg-4">
+                        <input name="price" type="number" class="form-control" id="price">
+                      </div>
+                    </div>
+
+                    <div class="row mb-4">
+                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Quantity</label>
+                      <div class="col-md-4 col-lg-4">
+                        <input name="quantity" type="number" class="form-control" id="num">
+                      </div>
+                    </div>
+
+                    <div class="row mb-4">
+                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">description</label>
+                      <div class="col-md-4 col-lg-4">
+                        <textarea name="quantity" class="form-control" id="num">
+                        </textarea>
+                      </div>
+                    </div>
+
+                    <div class="row mb-4">
+                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Image</label>
+                    <div class="col-md-4 col-lg-4">
+                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>                        </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary">Add item</button>
+                    </div>
+                    </div>
+                  </form>
+                  <!-- End add item Form -->
+
+                </div>
+
+                <!-- delete item Form -->
+                <div class="tab-pane fade pt-3" id="delete-item">
+
+                  <form>
+                    <div class="row mb-4">
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Item ID</label>
+                      <div class="col-md-4 col-lg-4">
+                        <input name="id" type="number" class="form-control" id="itemId">
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary">Delete Item</button>
+                    </form><
+                    </div>
+                </div>
+                  <!-- delete settings Form -->
 
 
-
-
-
-                <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form method="$_POST" action="<?php $_SERVER['PHP_SELF'] ?>">
+                <div class="tab-pane fade pt-3" id="profile-change-password">
+                  <form>
 
-                    <div class="row mb-3">
+                    <div class="row mb-4">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
-                      <div class="col-md-8 col-lg-9">
+                      <div class="col-md-4 col-lg-4">
                         <input name="password" type="password" class="form-control" id="currentPassword">
                       </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-4">
                       <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
-                      <div class="col-md-8 col-lg-9">
+                      <div class="col-md-4 col-lg-4">
                         <input name="newpassword" type="password" class="form-control" id="newPassword">
                       </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-4">
                       <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
-                      <div class="col-md-8 col-lg-9">
+                      <div class="col-md-4 col-lg-4">
                         <input name="renewpassword" type="password" class="form-control" id="renewPassword">
                       </div>
                     </div>
@@ -498,17 +383,21 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <?php include '../Home/Include/footer.php'; ?>
-  <!-- End Footer -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
 
-
-  
-  <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-
-  
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
