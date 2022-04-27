@@ -1,4 +1,19 @@
 <?php 
+
+
+
+$basepath = '/Home/';
+$realBase = realpath($basepath);
+
+$userpath = $basepath . $_SERVER['REQUEST_URI'];;
+$realUserPath = realpath($userpath);
+
+if ($realUserPath === false || strpos($realUserPath, $realBase) !== 0) {
+    //Directory Traversal!
+} else {
+    //Good path!
+}
+
 include ('addUser.php');
 session_start();
 ?>
