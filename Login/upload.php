@@ -2,7 +2,7 @@
 session_start();
 if(isset($_POST['submit'])){
         if(isset($_FILES['upload'])){
-            $upload_dir = "userImg/";
+            $upload_dir = "assets/img/userImg/";
             $file_name = $_FILES["upload"]["name"];
             // echo $file_name;
             $path = pathinfo($file_name);
