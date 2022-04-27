@@ -20,6 +20,7 @@
                 $_SESSION['name'] = $row['name'];
                 $_SESSION['username'] = $row['username'];
                 $_SESSION['Pr']= $row['Pr'];
+                $_SESSION['email'] = $row['email'];
                 header("Location: " . ROOT_URL );  
             }
             else {
