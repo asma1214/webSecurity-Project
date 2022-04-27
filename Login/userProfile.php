@@ -55,29 +55,17 @@ session_start();
       </a>
 
     </div><!-- End Logo -->
-    <div class="col-8">  
-      <div class="row">
-      <!-- <div class="d-flex justify-content-center">
-        <div class="col-3">
-          <i class="bi bi-plus-circle-fill"></i>
-      <a href="">Add new item</a>
-      </div>
-      <div class="col-3">
-      <i class="bi bi-dash-circle-fill"></i>
-      <a href="">Delete item</a>
-      </div>
-      </div> -->
-    </div>
-    </div>
-    <?php $file= "assets/img/userImg/" . $_SESSION['username'] . ".*";
-                      $result = glob ($file ,GLOB_BRACE);
-                      // save the path of the file in $r
-                      $r =  $result[0];
-                      // save the extension of the file 
-                      // $match = preg_split('/[\.]/', $r);
-                      // $ext = $match[1];
-                      // $fullPath = $r;
-                      ?>
+    
+    <?php $file= "assets/img/userImg/" . $_SESSION['username'] . ".*"; ?>
+                     <?php  $result = glob ($file ,GLOB_BRACE); ?>
+                    
+                   <?php   $r =  $result[0]; ?>
+
+                 
+                    
+                      
+
+
     <!-- find Extension of the file -->
  
     <nav class="header-nav">
@@ -142,7 +130,7 @@ session_start();
 
   </header><!-- End Header -->
 
-
+ 
   <main id="main" class="main">
 
     <div class="pagetitle">
