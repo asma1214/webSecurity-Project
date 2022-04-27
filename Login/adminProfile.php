@@ -99,32 +99,6 @@ session_start();
             <li class="dropdown-header">
               <h6><?php echo $_SESSION['name'] ?></h6>
             </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href=<?php $_SERVER['PHP_SELF'] ?>>
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href=<?php $_SERVER['PHP_SELF'] ?>>
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
 
             <li>
               <a class="dropdown-item d-flex align-items-center" href="destroy.php">
@@ -206,7 +180,6 @@ session_start();
                     <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                     <div class="col-md-5 col-lg-5">
                       
-                      
 
                       <?php if(file_exists($r)){?>
                         <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" >
@@ -229,45 +202,45 @@ session_start();
                     </div>
                   </div>
                   
-                  <form>
+                  <form action="editAdmin.php" method="POST">
                     <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" value=<?php echo $_SESSION['name']?>>
+                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Name</label>
+                      <div class="col-md-5 col-lg-5">
+                        <input name="Name" type="text" class="form-control" id="fullName" value=<?php echo $_SESSION['name']?>>
                       </div>
                     </div>
 
 
                     <div class="row mb-3">
                       <label for="company" class="col-md-4 col-lg-3 col-form-label">Company</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="company" type="text" class="form-control" id="company" value="Bitmain">
+                      <div class="col-md-5 col-lg-5">
+                        <input name="company" type="text" class="form-control" id="company" value="Bitmain" disabled>
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="job" type="text" class="form-control" id="Job" value="admin">
+                      <div class="col-md-5 col-lg-5">
+                        <input name="job" type="text" class="form-control" id="Job" value="admin" disabled>
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="country" type="text" class="form-control" id="Country" value="KSA">
+                      <div class="col-md-5 col-lg-5">
+                        <input name="country" type="text" class="form-control" id="Country" value="KSA" disabled>
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
-                      <div class="col-md-8 col-lg-9">
+                      <div class="col-md-5 col-lg-5">
                         <input name="email" type="email" class="form-control" id="Email" value=<?php echo $_SESSION['email']?>>
                       </div>
                     </div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                      <button type="submit" class="btn btn-primary" name="save">Save Changes</button>
                     </div>
                   </form><!-- End Profile Edit Form -->
 
@@ -277,7 +250,7 @@ session_start();
 
                   <!-- add item Form -->
                   
-                  <form>
+                  <form action="addItem.php" method="POST" enctype="multipart/form-data">
                     <div class="row mb-4">
                       <label class="col-md-4 col-lg-3 col-form-label">Name</label>
                       <div class="col-md-4 col-lg-4">
@@ -295,14 +268,14 @@ session_start();
                     <div class="row mb-4">
                       <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Quantity</label>
                       <div class="col-md-4 col-lg-4">
-                        <input name="quantity" type="number" class="form-control" id="num">
+                        <input name="quan" type="number" class="form-control" id="num">
                       </div>
                     </div>
 
                     <div class="row mb-4">
                       <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">description</label>
                       <div class="col-md-4 col-lg-4">
-                        <textarea name="quantity" class="form-control" id="num">
+                        <textarea name="desc" class="form-control" id="num">
                         </textarea>
                       </div>
                     </div>
@@ -310,10 +283,12 @@ session_start();
                     <div class="row mb-4">
                       <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Image</label>
                     <div class="col-md-4 col-lg-4">
-                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>                        </div>
+                      <input type="file" class="form-control" name="upload">
+
+                        </div>
+                        </div>
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Add item</button>
-                    </div>
+                      <button type="submit" class="btn btn-primary" name="addItem">Add item</button>
                     </div>
                   </form>
                   <!-- End add item Form -->
@@ -323,7 +298,7 @@ session_start();
                 <!-- delete item Form -->
                 <div class="tab-pane fade pt-3" id="delete-item">
 
-                  <form>
+                  <form action="deleteItem.php" method="POST">
                     <div class="row mb-4">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Item ID</label>
                       <div class="col-md-4 col-lg-4">
@@ -332,8 +307,8 @@ session_start();
                     </div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Delete Item</button>
-                    </form><
+                      <button type="submit" class="btn btn-primary" name="delete">Delete Item</button>
+                    </form>
                     </div>
                 </div>
                   <!-- delete settings Form -->
