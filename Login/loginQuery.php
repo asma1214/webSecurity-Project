@@ -15,7 +15,7 @@
         define('ROOT_URL', '../Home/home.php');
         $row = mysqli_fetch_assoc($result);
         echo 'username: '.$row['username'];
-            if(($_POST['username'] == $row['username']) && password_verify($_POST['password'], $row['password'])){
+            if(($_POST['username'] == $row['username']) && ($_POST['password'] == $row['password'])){
                 $_SESSION['userId'] = $row['ID'];
                 $_SESSION['name'] = $row['name'];
                 $_SESSION['username'] = $row['username'];
