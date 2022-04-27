@@ -70,11 +70,14 @@ session_start();
     </div>
     </div>
     <!-- find Extension of the file -->
-    <?php $file= "../userImg/" . $_SESSION['username'] . ".jpg";
+    <?php $file= "assets/img/userImg/" . $_SESSION['username'] . ".png";
                       $result = glob ($file ,GLOB_BRACE);
                       // save the path of the file in $r
                       $r =  $result[0];
-                      echo $file; 
+                       
+                     
+
+                      
                       // save the extension of the file 
                       // $match = preg_split('/[\.]/', $r);
                       // $ext = $match[1];
@@ -87,11 +90,11 @@ session_start();
         <li class="nav-item dropdown pe-4">
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
           <?php if(file_exists($r)){?>
-                        <img src="../Login/userImg/<?php echo $_SESSION['username']; ?>.jpg" alt="Profile" class="rounded-circle">
+                        <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" class="rounded-circle">
                         <?php } else {?>
                           <img src="assets/img/image.png" alt="Profile" class="rounded-circle">
                          
-                          <?php  } ?>
+                          <?php   } ?>
             <!-- <img src="assets/img/image.png" alt="Profile" class="rounded-circle"> -->
             <span class="d-none d-md-block dropdown-toggle ps-1 pe-3" ><?php echo $_SESSION['username'] ?></span>
           </a>
@@ -163,9 +166,9 @@ session_start();
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
             <?php if(file_exists($r)){?>
-                        <img src="userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" class="rounded-circle">
+                        <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" class="rounded-circle">
                         <?php } else {?>
-                          <img src="assets/img/image.png" alt="Profile" class="rounded-circle">
+                          <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" class="rounded-circle">
                           <?php } ?>
               <!-- <img src="assets/img/image.png" alt="Profile" class="rounded-circle"> -->
               <h2><?php echo $_SESSION['name'] ?></h2>
@@ -203,10 +206,10 @@ session_start();
                     <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                     <div class="col-md-5 col-lg-5">
                       
-                      
+                   
 
-                      <?php if(file_exists($r)){?>
-                        <img src="userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile">
+                      <?php if(1){?>
+                        <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" >
                         <?php } else {?>
                           <img src="assets/img/image.png" alt="Profile">
                           <?php } ?>
