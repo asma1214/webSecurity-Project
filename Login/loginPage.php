@@ -93,7 +93,7 @@
                     </div>
                     <div class="errorMsg col-12"><?php if(isset($Error)) echo $Error; ?></div>
                     <div class="col-12">
-                    <input class="btn btn-primary w-100" type="submit" value="Login" name="submit">
+                    <input class="btn btn-primary w-100" type="submit" value="Login" name="submit1">
                       <!-- <button class="btn btn-primary w-100" type="submit">Login</button> -->
                     </div>
                     <div class="col-12">

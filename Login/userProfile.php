@@ -291,7 +291,7 @@ session_start();
                     </div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Change Password</button>
+                      <button type="submit" class="btn btn-primary" type="submit" value="changepassword" name="submit">Change Password</button>
                     </div>
                   </form><!-- End Change Password Form -->
 
