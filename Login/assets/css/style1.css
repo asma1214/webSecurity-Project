@@ -19,8 +19,10 @@ body {
 }
 
 a {
-  color: #4154f1;
+  color: #012970;
   text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 a:hover {
