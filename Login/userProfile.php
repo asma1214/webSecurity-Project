@@ -48,87 +48,73 @@ session_start();
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="../Home/home.php" class="logo d-flex align-items-center">
-        <img src="assets/img/bitcoin.png" alt="">
-        <span class="d-none d-lg-block">Bitmain</span>
+<div class="d-flex align-items-center justify-content-between">
+  <a href="../Home/home.php" class="logo d-flex align-items-center">
+    <img src="assets/img/bitcoin.png" alt="">
+    <span class="d-none d-lg-block">Bitmain</span>
+  </a>
+
+</div><!-- End Logo -->
+<div class="col-8">  
+  <div class="row">
+  <!-- <div class="d-flex justify-content-center">
+    <div class="col-3">
+      <i class="bi bi-plus-circle-fill"></i>
+  <a href="">Add new item</a>
+  </div>
+  <div class="col-3">
+  <i class="bi bi-dash-circle-fill"></i>
+  <a href="">Delete item</a>
+  </div>
+  </div> -->
+</div>
+</div>
+<!-- find Extension of the file -->
+<?php $file= "assets/img/userImg/" . $_SESSION['username'] . ".*";
+                  $result = glob ($file ,GLOB_BRACE);
+                  // save the path of the file in $r
+                  $r =  $result[0];
+                  // save the extension of the file 
+                  $match = preg_split('/[\.]/', $r);
+                  $ext = $match[1];
+                  $fullPath = $r;
+                  // echo $fullPath;
+                  ?>
+<nav class="header-nav">
+
+  <ul class="d-flex align-items-center row">        
+
+    <li class="nav-item dropdown pe-4">
+      <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+      <?php if(file_exists($r)){?>
+                    <img src="<?php echo $fullPath ?>" alt="Profile" class="rounded-circle">    
+                    <?php } else {?>
+                      <img src="assets/img/image.png" alt="Profile" class="rounded-circle">
+                      <?php } ?>
+        <!-- <img src="assets/img/image.png" alt="Profile" class="rounded-circle"> -->
+        <span class="d-none d-md-block dropdown-toggle ps-1 pe-3" ><?php echo $_SESSION['username'] ?></span>
       </a>
+      <!-- End Profile Iamge Icon -->
 
-    </div><!-- End Logo -->
-    
-    <?php $file= "assets/img/userImg/" . $_SESSION['username'] . ".*"; ?>
-                     <?php  $result = glob ($file ,GLOB_BRACE); ?>
-                    
-                   <?php   $r =  $result[0]; ?>
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+        <li class="dropdown-header">
+          <h6><?php echo $_SESSION['name'] ?></h6>
+        </li>
 
-                 
-                    
-                      
-
-
-    <!-- find Extension of the file -->
- 
-    <nav class="header-nav">
-
-      <ul class="d-flex align-items-center row">        
-
-        <li class="nav-item dropdown pe-4">
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-          <?php if(file_exists($r)){?>
-                        <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" class="rounded-circle">
-                        <?php } else {?>
-                          <img src="assets/img/image.png" alt="Profile" class="rounded-circle">
-                          <?php } ?>
-            <!-- <img src="assets/img/image.png" alt="Profile" class="rounded-circle"> -->
-            <span class="d-none d-md-block dropdown-toggle ps-1 pe-3" ><?php echo $_SESSION['username'] ?></span>
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="destroy.php">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Sign Out</span>
           </a>
-          <!-- End Profile Iamge Icon -->
+        </li>
 
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
-              <h6><?php echo $_SESSION['name'] ?></h6>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+      </ul><!-- End Profile Dropdown Items -->
+    </li><!-- End Profile Nav -->
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href=<?php $_SERVER['PHP_SELF'] ?>>
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+  </ul>
+</nav><!-- End Icons Navigation -->
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href=<?php $_SERVER['PHP_SELF'] ?>>
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="destroy.php">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
-            </li>
-
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
-
-      </ul>
-    </nav><!-- End Icons Navigation -->
-
-  </header><!-- End Header -->
+</header><!-- End Header -->
 
  
   <main id="main" class="main">
@@ -151,7 +137,7 @@ session_start();
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
             
             <?php if(file_exists($r)){?>
-                        <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" class="rounded-circle">
+                        <img src="<?php echo $fullPath ?>" alt="Profile" class="rounded-circle">
                         <?php } else {?>
                           <img src="assets/img/image.png" alt="Profile" class="rounded-circle">
                           <?php } ?>
@@ -174,8 +160,6 @@ session_start();
                   <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
                 </li>
 
-              
-
                 <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
                 </li>
@@ -190,11 +174,9 @@ session_start();
                   <div class="row mb-3">
                     <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                     <div class="col-md-5 col-lg-5">
-                      
-                   
 
                       <?php if(file_exists($r)){?>
-                        <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" >
+                        <img src="<?php echo $fullPath ?>" alt="Profile" >
                         <?php } else {?>
                           <img src="assets/img/image.png" alt="Profile">
                           <?php } ?>
@@ -203,41 +185,29 @@ session_start();
                           <!-- <button class="btn btn-primary btn-sm bi bi-upload" type="file" name="upload"></button> -->
                           <input type="file" class="form-control" name="upload">
                           <br>
-                          <!-- <input type="submit" value="Upload" name="submit"> -->
                           <button class="btn btn-primary btn-sm" type="submit" name="submit">Upload</button>
-
-                          <!-- <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a> -->
-                          <!-- <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a> -->
                         </form>   
                         
                       </div>
                     </div>
                   </div>
-                  
-                  <form>
-                  
-
+                  <form action="editProfile.php" method="POST">
                     <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" value=<?php echo $_SESSION['name']?>>
+                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Name</label>
+                      <div class="col-md-5 col-lg-5">
+                        <input name="Name" type="text" class="form-control" id="fullName" value=<?php echo $_SESSION['name']?>>
                       </div>
                     </div>
 
-                   
-                    
-
-
                     <div class="row mb-3">
                       <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" value=<?php echo $_SESSION['name']?>>
-                        
+                      <div class="col-md-5 col-lg-5">
+                        <input name="email" type="text" class="form-control" id="email" value=<?php echo $_SESSION['email']?>>
                       </div>
                     </div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                      <button type="submit" class="btn btn-primary" name="edit" >Save Changes</button>
                     </div>
                   </form><!-- End Profile Edit Form -->
 
@@ -245,40 +215,36 @@ session_start();
 
                 <div class="tab-pane fade pt-3" id="add-item">
 
-                
-
                 </div>
 
                
-
-
                   <!-- Change Password Form -->
                 <div class="tab-pane fade pt-3" id="profile-change-password">
-                  <form action="editProfile.php" method="POST">
-
+                  <form action="editPass1.php" method="POST">
                     <div class="row mb-4">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
                       <div class="col-md-4 col-lg-4">
-                        <input name="currentPassword" type="password" class="form-control" id="currentPassword">
+                        <input name="currentPass" type="password" class="form-control" id="currentPassword">
                       </div>
                     </div>
 
                     <div class="row mb-4">
                       <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
                       <div class="col-md-4 col-lg-4">
-                        <input name="newpassword" type="password" class="form-control" id="newPassword">
+                        <input name="newPass" type="password" class="form-control" id="newPassword">
                       </div>
                     </div>
 
                     <div class="row mb-4">
                       <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
                       <div class="col-md-4 col-lg-4">
-                        <input name="renewpassword" type="password" class="form-control" id="renewPassword">
+                        <input name="rePass" type="password" class="form-control" id="renewPassword">
                       </div>
                     </div>
+                    <div class="errorMsg col-12"><?php if(isset($Error)) echo $Error; ?></div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary"  value="submit" name="submit">Change Password</button>
+                      <button type="submit" class="btn btn-primary"  value="submit" name="change">Change Passwor</button>
                     </div>
                   </form><!-- End Change Password Form -->
 

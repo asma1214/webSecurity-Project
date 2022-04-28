@@ -75,9 +75,9 @@ session_start();
                       // save the path of the file in $r
                       $r =  $result[0];
                       // save the extension of the file 
-                      // $match = preg_split('/[\.]/', $r);
-                      // $ext = $match[1];
-                      // $fullPath = $r;
+                      $match = preg_split('/[\.]/', $r);
+                      $ext = $match[1];
+                      $fullPath = $r;
                       ?>
     <nav class="header-nav">
 
@@ -86,7 +86,7 @@ session_start();
         <li class="nav-item dropdown pe-4">
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
           <?php if(file_exists($r)){?>
-                        <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" class="rounded-circle">    
+                        <img src="<?php echo $fullPath ?>" alt="Profile" class="rounded-circle">    
                         <?php } else {?>
                           <img src="assets/img/image.png" alt="Profile" class="rounded-circle">
                           <?php } ?>
@@ -135,7 +135,7 @@ session_start();
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
             <?php if(file_exists($r)){?>
-                        <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" class="rounded-circle">
+                        <img src="<?php echo $fullPath ?>" alt="Profile" class="rounded-circle">
                         <?php } else {?>
                           <img src="assets/img/image.png" alt="Profile" class="rounded-circle">
                           <?php } ?>
@@ -174,7 +174,6 @@ session_start();
 
                 <div class="tab-pane fade show active profile-edit" id="profile-edit">
 
-
                   <!-- Profile Edit Form -->
                   <div class="row mb-3">
                     <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
@@ -182,7 +181,7 @@ session_start();
                       
 
                       <?php if(file_exists($r)){?>
-                        <img src="assets/img/userImg/<?php echo $_SESSION['username']; ?>.png" alt="Profile" >
+                        <img src="<?php echo $fullPath ?>" alt="Profile" >
                         <?php } else {?>
                           <img src="assets/img/image.png" alt="Profile">
                           <?php } ?>
@@ -191,11 +190,7 @@ session_start();
                           <!-- <button class="btn btn-primary btn-sm bi bi-upload" type="file" name="upload"></button> -->
                           <input type="file" class="form-control" name="upload">
                           <br>
-                          <!-- <input type="submit" value="Upload" name="submit"> -->
                           <button class="btn btn-primary btn-sm" type="submit" name="submit">Upload</button>
-
-                          <!-- <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a> -->
-                          <!-- <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a> -->
                         </form>   
                         
                       </div>
@@ -316,31 +311,31 @@ session_start();
 
                   <!-- Change Password Form -->
                 <div class="tab-pane fade pt-3" id="profile-change-password">
-                  <form>
+                  <form action="editPass1.php" method="POST" > 
 
                     <div class="row mb-4">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
                       <div class="col-md-4 col-lg-4">
-                        <input name="password" type="password" class="form-control" id="currentPassword">
+                        <input name="currentPass" type="password" class="form-control" id="currentPassword">
                       </div>
                     </div>
 
                     <div class="row mb-4">
                       <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
                       <div class="col-md-4 col-lg-4">
-                        <input name="newpassword" type="password" class="form-control" id="newPassword">
+                        <input name="newPass" type="password" class="form-control" id="newPassword">
                       </div>
                     </div>
 
                     <div class="row mb-4">
                       <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
                       <div class="col-md-4 col-lg-4">
-                        <input name="renewpassword" type="password" class="form-control" id="renewPassword">
+                        <input name="rePass" type="password" class="form-control" id="renewPassword">
                       </div>
                     </div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Change Password</button>
+                      <button type="submit" class="btn btn-primary" name="change">Change Password</button>
                     </div>
                   </form><!-- End Change Password Form -->
 
