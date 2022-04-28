@@ -11,9 +11,9 @@ if(isset($_POST['change'])){
     // $newPass1= password_hash($newPass, PASSWORD_DEFAULT);
     // $oldPass= password_hash($oldPass, PASSWORD_DEFAULT);
 
-    $currentPass = $_POST['currentPass']; 
-    $newPass = $_POST['newPass'];    
-    $rePass = $_POST['rePass'];  
+    $currentPass = htmlspecialchars($_POST['currentPass']); 
+    $newPass = htmlspecialchars($_POST['newPass']);    
+    $rePass = htmlspecialchars($_POST['rePass']);  
     // echo $newPass . "<br>" . $currentPass . "<br>" . $rePass;
 
     $username = $_SESSION['username'];

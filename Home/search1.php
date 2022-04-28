@@ -2,7 +2,7 @@
 include('../connectDB.php');
 
 
-$search= $_POST['search'];
+$search= htmlspecialchars($_POST['search']);
             
 //SQL Query to get foods based on search keyword
 $sql="SELECT * FROM tools WHERE itemName LIKE '%$search%'";
@@ -12,12 +12,10 @@ $result = mysqli_query($conn, $sql);
     
 //Count Rows
 $items =mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-
             
         //Count Rows
         $count =mysqli_num_rows($result);
-        //Check whether food available of not
+        //Check whether item available of not
         if($count>0)
         {
             echo"<div class='error'> <h3><strong> Results for:</strong>$search </h3></div> "; 

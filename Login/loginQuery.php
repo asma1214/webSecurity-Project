@@ -5,24 +5,21 @@
     $stmt = mysqli_stmt_init($conn);
     $sql = 'SELECT * FROM users WHERE username = ?';
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        echo "Failed";
-        
+        echo "Failed";   
     }
     else {
-        mysqli_stmt_bind_param($stmt , 's' , $_POST['username']);
+        mysqli_stmt_bind_param($stmt , 's' , htmlspecialchars($_POST['username']));
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         define('ROOT_URL', '../Home/home.php');
         $row = mysqli_fetch_assoc($result);
-        echo 'username: '.$row['username'];
-            if(($_POST['username'] == $row['username']) && ($_POST['password'] == $row['password'])){
+            if(($_POST['username'] == $row['username']) && (htmlspecialchars($_POST['password']) == $row['password'])){
                 $_SESSION['userId'] = $row['ID'];
                 $_SESSION['name'] = $row['name'];
                 $_SESSION['username'] = $row['username'];
                 $_SESSION['Pr']= $row['Pr'];
                 $_SESSION['email'] = $row['email'];
-                echo $_SESSION['email']; 
-               // header("Location: " . ROOT_URL );  
+               header("Location: " . ROOT_URL );  
             }
             else {
                 $Error = "Sorry, your password or username was incorrect.";

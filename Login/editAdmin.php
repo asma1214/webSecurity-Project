@@ -4,8 +4,8 @@ require ('../connectDB.php');
 // echo "yes";
 if(isset($_POST['save'])){
     // echo $_SESSION['userId'];
-    $name = $_POST['Name'];
-    $email =$_POST['email'];
+    $name = htmlspecialchars($_POST['Name']);
+    $email = htmlspecialchars($_POST['email']);
     $ID = $_SESSION['userId'];
     $query = "UPDATE users SET name = '$name' , email = '$email' WHERE ID = '$ID' ";
     mysqli_query($conn, $query);

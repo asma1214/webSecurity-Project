@@ -88,7 +88,7 @@ include('itemQ.php');
             <input type="search" name="search" required>
             <i class="fa fa-search"></i>
           </form>
-          <?php if(isset($_POST['search'])){
+          <?php if(isset(htmlspecialchars($_POST['search']))){
                 include($_GET['page']);
               }
        ?>

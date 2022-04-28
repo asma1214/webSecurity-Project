@@ -63,7 +63,7 @@ session_start();
   </header> 
   <!-- End Header -->
 
-
+  <!-- htmlspecialchars($_POST['email']) -->
   <header id="header2" class="d-flex flex-row justify-content-center">
 
     <nav id="navbar" class="navbar nav-menu1">

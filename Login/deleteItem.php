@@ -1,7 +1,7 @@
 <?php
 require('../connectDB.php'); 
 if(isset($_POST['delete'])){
-    $id = $_POST['id'];
+    $id = htmlspecialchars($_POST['id']);
     // echo "yes   " . $id;
     $query = "SELECT * FROM tools WHERE id = '$id' ";
     $objc= mysqli_query($conn, $query);
@@ -9,7 +9,6 @@ if(isset($_POST['delete'])){
     $name= $result['img'];
     $dir = "../Home/assets/img/miners/";
     $fullpath = $dir . $name;
-    echo $fullpath;
     if(mysqli_num_rows($objc) > 0){
        
         $query1 = "DELETE FROM tools WHERE id = '$id' ";
