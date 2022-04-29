@@ -5,6 +5,9 @@ if(isset($_POST['submit'])){
         if(isset($_FILES['upload'])){
             $upload_dir = "assets/img/userImg/";
             $file_name = $_FILES["upload"]["name"];
+            $uploaded_type = $_FILES[ 'uploaded' ][ 'type' ];
+            $uploaded_size = $_FILES[ 'uploaded' ][ 'size' ];
+        
             // echo $file_name;
             $path = pathinfo($file_name);
             // $newFileName = $_SESSION['username'];
@@ -12,10 +15,10 @@ if(isset($_POST['submit'])){
             $ext = $path['extension'];
             $tmp_name = $_FILES['upload']['tmp_name'];
             $fullPath = $upload_dir . $newFileName."." .$ext;
-            $FilenoExt=$upload_dir . $newFileName; 
+            $FileNoExt=$upload_dir . $newFileName; 
             
 
-            array_map('unlink', glob($FilenoExt.".*"));
+            array_map('unlink', glob($FileNoExt.".*"));
             
             $moved = move_uploaded_file($tmp_name, $fullPath);
 
