@@ -12,11 +12,13 @@ if(isset($_POST['submit'])){
             $ext = $path['extension'];
             $tmp_name = $_FILES['upload']['tmp_name'];
             $fullPath = $upload_dir . $newFileName."." .$ext;
-            $fullPathAll = $upload_dir . $newFileName.".*" ;
-            if(file_exists($fullPathAll) )
-            { unlink($file);}
-            $moved = move_uploaded_file($tmp_name, $fullPath);
+            $FilenoExt=$upload_dir . $newFileName; 
             
+
+            array_map('unlink', glob($FilenoExt.".*"));
+            
+            $moved = move_uploaded_file($tmp_name, $fullPath);
+
             // if( $moved ) {
             //     echo "Successfully uploaded";         
             //   } else {
