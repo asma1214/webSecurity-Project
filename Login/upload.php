@@ -11,26 +11,7 @@ if(isset($_POST['submit'])){
             $ext = $path['extension'];
             $tmp_name = $_FILES['upload']['tmp_name'];
             $fullPath = $upload_dir . $newFileName."." .$ext;
-
-            if( ( $ext == "jpeg" || $ext == "png" ) && ( $uploaded_size < 100000 ) ) {
-    
-                // Can we move the file to the upload folder?
-                if( !move_uploaded_file($tmp_name, $fullPath) ) {
-                    // No
-                    echo '<pre>Your image was not uploaded.</pre>';
-                }
-                else {
-                    // Yes!
-                    echo "<pre> Succesfully uploaded!</pre>";
-                }
-            }
-            else {
-            // Invalid file
-            echo '<pre>Your image was not uploaded. We can only accept JPEG or PNG images.</pre>';
-            } 
-
-            
-            //$moved = move_uploaded_file($tmp_name, $fullPath);
+            $moved = move_uploaded_file($tmp_name, $fullPath);
             
             // if( $moved ) {
             //     echo "Successfully uploaded";         
