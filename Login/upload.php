@@ -1,6 +1,7 @@
 <?php
 session_start();
 if(isset($_POST['submit'])){
+        
         if(isset($_FILES['upload'])){
             $upload_dir = "assets/img/userImg/";
             $file_name = $_FILES["upload"]["name"];
@@ -11,6 +12,8 @@ if(isset($_POST['submit'])){
             $ext = $path['extension'];
             $tmp_name = $_FILES['upload']['tmp_name'];
             $fullPath = $upload_dir . $newFileName."." .$ext;
+            if(file_exists($fullPath))
+            { unlink($file);}
             $moved = move_uploaded_file($tmp_name, $fullPath);
             
             // if( $moved ) {
