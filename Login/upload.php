@@ -12,6 +12,7 @@ if(isset($_POST['submit'])){
             $tmp_name = $_FILES['upload']['tmp_name'];
             $fullPath = $upload_dir . $newFileName."." .$ext;
             $moved = move_uploaded_file($tmp_name, $fullPath);
+            
             // if( $moved ) {
             //     echo "Successfully uploaded";         
             //   } else {

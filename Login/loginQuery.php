@@ -19,7 +19,7 @@
                 $_SESSION['username'] = $row['username'];
                 $_SESSION['Pr']= $row['Pr'];
                 $_SESSION['email'] = $row['email'];
-               header("Location: " . ROOT_URL );  
+                header("Location: " . ROOT_URL );  
             }
             else {
                 $Error = "Sorry, your password or username was incorrect.";
