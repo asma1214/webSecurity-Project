@@ -22,6 +22,20 @@ if(isset($_POST['submit'])){
             
             $moved = move_uploaded_file($tmp_name, $fullPath);
 
+
+          
+            
+           /* 
+
+            To prvent file uploded Attack 
+            
+            if( ( $uploaded_type == "image/jpeg" || $uploaded_type == "image/png" ) && ( $uploaded_size < 100000 ) ) { 
+            $moved = move_uploaded_file($tmp_name, $fullPath); }
+            */
+            
+
+
+
             // if( $moved ) {
             //     echo "Successfully uploaded";         
             //   } else {
