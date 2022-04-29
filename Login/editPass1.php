@@ -37,6 +37,8 @@ if(isset($_POST['change'])){
 // else {
 //     $Error = "Sorry, your password is not correct.";
 // }
+
+
 $pr = $_SESSION['Pr'];
 if($pr == 'u'){
 header('Location: '.USER.'');

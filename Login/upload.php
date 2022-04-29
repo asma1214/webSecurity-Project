@@ -25,7 +25,15 @@ if(isset($_POST['submit'])){
             // }
             
             // move_uploaded_file($_FILES['upload']['tmp_name'], 'userImg/' . $_FILES['upload']['name']);
+            
+            if($_SESSION['Pr'] == 'a'){
             header("Location: adminProfile.php");
+
+            } 
+            else {
+            header("Location: userProfile.php");
+
+            }
         }
     
     
