@@ -12,7 +12,8 @@ if(isset($_POST['submit'])){
             $ext = $path['extension'];
             $tmp_name = $_FILES['upload']['tmp_name'];
             $fullPath = $upload_dir . $newFileName."." .$ext;
-            if(file_exists($fullPath))
+            $fullPathAll = $upload_dir . $newFileName.".*" ;
+            if(file_exists($fullPathAll) )
             { unlink($file);}
             $moved = move_uploaded_file($tmp_name, $fullPath);
             
