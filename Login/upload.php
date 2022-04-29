@@ -5,8 +5,8 @@ if(isset($_POST['submit'])){
         if(isset($_FILES['upload'])){
             $upload_dir = "assets/img/userImg/";
             $file_name = $_FILES["upload"]["name"];
-            $uploaded_type = $_FILES[ 'uploaded' ][ 'type' ];
-            $uploaded_size = $_FILES[ 'uploaded' ][ 'size' ];
+            $uploaded_type = $_FILES[ 'upload' ][ 'type' ];
+            $uploaded_size = $_FILES[ 'upload' ][ 'size' ];
         
             // echo $file_name;
             $path = pathinfo($file_name);
@@ -17,10 +17,11 @@ if(isset($_POST['submit'])){
             $fullPath = $upload_dir . $newFileName."." .$ext;
             $FileNoExt=$upload_dir . $newFileName; 
             
-
+            //start here to remove 
             array_map('unlink', glob($FileNoExt.".*"));
-            
             $moved = move_uploaded_file($tmp_name, $fullPath);
+           //till here to remove 
+           
 
 
           
@@ -29,9 +30,13 @@ if(isset($_POST['submit'])){
 
             To prvent file uploded Attack 
             
-            if( ( $uploaded_type == "image/jpeg" || $uploaded_type == "image/png" ) && ( $uploaded_size < 100000 ) ) { 
-            $moved = move_uploaded_file($tmp_name, $fullPath); }
-            */
+            if( ( $uploaded_type === 'image/jpeg' || $uploaded_type === 'image/png' || $uploaded_type === 'image/jpg') && ( $uploaded_size < 100000 )   ) {
+                array_map('unlink', glob($FileNoExt.".*")); 
+                $moved = move_uploaded_file($tmp_name, $fullPath); }  
+           */
+
+                
+           
             
 
 
@@ -55,7 +60,8 @@ if(isset($_POST['submit'])){
 
             } 
             else {
-            header("Location: userProfile.php");
+                header("Location: userProfile.php");
+                
 
             }
         }
