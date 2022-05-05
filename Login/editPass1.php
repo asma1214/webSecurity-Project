@@ -1,3 +1,5 @@
+<html>
+
 <?php
 session_start();
 define('USER', 'userProfile.php');
@@ -29,6 +31,7 @@ if(isset($_POST['change'])){
     }
     // two passwords are matches?
     if($newPass == $rePass){
+        echo "yes";
         $flag2 = true;
     }
     // ensure the new and old password are not the same
@@ -40,10 +43,6 @@ if(isset($_POST['change'])){
         $query = "UPDATE users SET password='$newPass' WHERE username ='$username'";
         if(mysqli_query($conn, $query)){
             ?>
-            <script>
-            window.location.href='adminProfile.php';
-            alert('Password sucessfully changed!');
-            </script>
             <?php
         } else {
             echo 'ERROR: '. mysqli_error($conn);
@@ -51,45 +50,9 @@ if(isset($_POST['change'])){
     }
     
         
-    
 
 
-$pr = $_SESSION['Pr'];
-if($pr == 'u'){
-header('Location: '.USER.'');
-} 
-else{
-    if(!$flag3){ ?>
-    
-    <script>
-    window.location.href='adminProfile.php';
-    alert('your old password and new password are the same!');
-</script>
- <?php
-    }
-    if(!$flag2){     
-?>
-<script>
-    window.location.href='adminProfile.php';
-</script>
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-                <i class="bi bi-check-circle me-1"></i>
-                A simple success alert with icon—check it out!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-<?php
-    }
-    else if (!$flag1){ ?>
-
-<script>
-    window.location.href='adminProfile.php';
-    alert('incorrect current password!');
-</script>
-
-<?php
 }
 
-}
-}
 ?>
     

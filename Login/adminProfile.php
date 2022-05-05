@@ -1,7 +1,14 @@
+<html>
+    <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+</html>
 
 <?php
 
 session_start();
+include('editPass1.php');
 
 ?>
 <!DOCTYPE html>
@@ -41,9 +48,12 @@ session_start();
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+
 </head>
 
 <body class="toggle-sidebar">
+
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
@@ -311,7 +321,7 @@ session_start();
 
                   <!-- Change Password Form -->
                 <div class="tab-pane fade pt-3" id="profile-change-password">
-                  <form action="editPass1.php" method="POST" > 
+                  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" > 
 
                     <div class="row mb-4">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
@@ -338,7 +348,61 @@ session_start();
                       <button type="submit" class="btn btn-primary" name="change">Change Password</button>
                     </div>
                   </form><!-- End Change Password Form -->
+                  <?php
+                  if(isset($_POST['change'])){
+                   if(!$flag3){ ?>
+                    <script>
+                        // alert('your olad password and new password are the same!');
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Oops...',
+                            text: 'your old and new password are the same!',
+                          }).then(function() {
+                    window.location = "adminProfile.php";});
+                </script>
+                <?php }
+                if(!$flag2){ 
+                  ?>
+                  <script>
+                    Swal.fire({
+                            icon: 'warning',
+                            title: 'Are you sure?',
+                            text: 'The two given passwords do not match!',
+                          }).then(function() {
+                    window.location = "adminProfile.php";});
+                  </script>
+                  <?php
+                      }
+                      if (!$flag1){
+                        ?>
+                        <script>
+                    Swal.fire({
+                            icon: 'error',
+                            title: 'oh-oh..',
+                            text: 'incorrect current password!',
+                          }).then(function() {
+                    window.location = "adminProfile.php";});
+                  </script>
 
+
+              <?php
+               }
+               else if($flag1 && $flag2 && $flag3) {
+
+                 ?>
+                 <script>
+                    Swal.fire({
+                            icon: 'success',
+                            title: 'Changed',
+                            text: 'your password sucessfully changed!',
+                          }).then(function() {
+                    window.location = "adminProfile.php";});
+                  </script>
+                 <?php
+               }
+               
+               }?>
+                  
                 </div>
 
               </div><!-- End Bordered Tabs -->
