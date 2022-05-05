@@ -12,7 +12,7 @@ include('itemQ.php');
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Bitmain</title>
+  <title>miners</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -50,13 +50,13 @@ include('itemQ.php');
         <?php if($_SESSION['Pr'] == 'u'){ ?>
         <li><a href="home.php" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="../Login/userProfile.php" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Account</span></a></li> 
-        <li><a href="home.php#miners" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Miners</span></a></li>
+        <li><a href="<?php $_SERVER['PHP_SELF'] ?>" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
         <li><a href="home.php#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
         <li><a href="home.php#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> 
         <?php } else {?>
           <li><a href="home.php" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="../Login/adminProfile.php" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Account</span></a></li> 
-        <li><a href="home.php#miners" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Miners</span></a></li>
+        <li><a href=<?php $_SERVER['PHP_SELF'] ?>" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
         <li><a href="home.php#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
         <li><a href="home.php#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> 
         <?php } ?>
