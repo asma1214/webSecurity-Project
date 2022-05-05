@@ -60,6 +60,7 @@ header('Location: '.USER.'');
 } 
 else{
     if(!$flag3){ ?>
+    
     <script>
     window.location.href='adminProfile.php';
     alert('your old password and new password are the same!');
@@ -70,8 +71,12 @@ else{
 ?>
 <script>
     window.location.href='adminProfile.php';
-    alert('The two given passwords do not match!');
 </script>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle me-1"></i>
+                A simple success alert with icon—check it out!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
 <?php
     }
     else if (!$flag1){ ?>
