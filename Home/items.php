@@ -89,13 +89,13 @@ include('itemQ.php');
             <i class="fa fa-search"></i>
           </form>
           <?php if(isset($_POST['search'])){
-<<<<<<< HEAD
+
                 include($_GET['page']);
-=======
+
             $file = $_GET['page'];
             $file = str_replace( array( "../", "..\\" ), "", $file );
             include($file);
->>>>>>> 602d2de15438f736b5b910e6f3c7ff9b23f04883
+
               }
        ?>
     
