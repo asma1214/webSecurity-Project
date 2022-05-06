@@ -101,7 +101,7 @@ include('itemQ.php');
     
 
 
-
+    
 
 
 <?php foreach($items as $item) : ?>
@@ -128,6 +128,7 @@ include('itemQ.php');
     </section><!-- End Miners Section -->
 
   </main><!-- End #main -->
+  
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
