@@ -20,7 +20,6 @@ if(isset($_POST['addItem'])){
     $fullPath = $upload_dir . $file_name;
     $moved = move_uploaded_file($tmp_name, $fullPath);
  
-    header("Location: adminProfile.php");
         
     // echo $name . "<br>" . $price . "<br>" . $quantity . "<br>" . $desc . "<br>" . $img;
 }

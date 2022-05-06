@@ -12,10 +12,12 @@ $result = mysqli_query($conn, $sql);
     
 //Count Rows
 $items =mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
             
         //Count Rows
         $count =mysqli_num_rows($result);
-        //Check whether item available of not
+        //Check whether food available of not
         if($count>0)
         {
             echo"<div class='error'> <h3><strong> Results for:</strong>$search </h3></div> "; 
