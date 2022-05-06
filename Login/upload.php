@@ -1,7 +1,9 @@
 <?php
 session_start();
+// $path="lol";
 if(isset($_POST['submit'])){
-        
+            $del1=false;
+            $del2=false;
         if(isset($_FILES['upload'])){
             $upload_dir = "assets/img/userImg/";
             $file_name = $_FILES["upload"]["name"];
@@ -10,22 +12,32 @@ if(isset($_POST['submit'])){
         
             // echo $file_name;
             $path = pathinfo($file_name);
-            // $newFileName = $_SESSION['username'];
             $newFileName =$_SESSION['username'];
             $ext = $path['extension'];
             $tmp_name = $_FILES['upload']['tmp_name'];
             $fullPath = $upload_dir . $newFileName."." .$ext;
             $FileNoExt=$upload_dir . $newFileName; 
-            
-            //start here to remove 
-            array_map('unlink', glob($FileNoExt.".*"));
             $moved = move_uploaded_file($tmp_name, $fullPath);
-           //till here to remove 
-           
-
-
+            if( $moved ) {
+                $del1=true;
+            }
           
-            
+        }
+}
+else if(isset($_POST['del'])){
+    $file_name = $_FILES["upload"]["name"];
+    if(isset($file_name)){
+        $upload_dir = "assets/img/userImg/";
+        $newFileName =$_SESSION['username'];
+        $FileNoExt=$upload_dir . $newFileName; 
+        //start here to remove 
+        array_map('unlink', glob($FileNoExt.".*"));
+        //till here to remove 
+        $del2= true;
+}
+
+}
+
            /* 
 
             To prvent file uploded Attack 
@@ -35,38 +47,23 @@ if(isset($_POST['submit'])){
                 $moved = move_uploaded_file($tmp_name, $fullPath); }  
            */
 
-                
-           
-            
-
-
-
-            // if( $moved ) {
-            //     echo "Successfully uploaded";         
-            //   } else {
-            //     echo "Not uploaded because of error #".$_FILES["upload"]["error"];
-            //   }
-            //   if (is_dir($upload_dir) && is_writable($upload_dir)) {
-            //     // do upload logic here
-            //     echo "<br> yes";
-            // } else {
-            //     echo '<br>Upload directory is not writable, or does not exist.';
-            // }
-            
-            // move_uploaded_file($_FILES['upload']['tmp_name'], 'userImg/' . $_FILES['upload']['name']);
-            
-            if($_SESSION['Pr'] == 'a'){
-            header("Location: adminProfile.php");
-
-            } 
-            else {
-                header("Location: userProfile.php");
-                
-
-            }
-        }
+          
     
-    
-}
+    ?>
 
-?>
+    <?php
+    // if( $moved ) {
+    //     echo "Successfully uploaded";         
+    //   } else {
+    //     echo "Not uploaded because of error #".$_FILES["upload"]["error"];
+    //   }
+    //   if (is_dir($upload_dir) && is_writable($upload_dir)) {
+    //     // do upload logic here
+    //     echo "<br> yes";
+    // } else {
+    //     echo '<br>Upload directory is not writable, or does not exist.';
+    // }
+    
+    // move_uploaded_file($_FILES['upload']['tmp_name'], 'userImg/' . $_FILES['upload']['name']);
+    ?>
+    

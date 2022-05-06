@@ -31,7 +31,6 @@ if(isset($_POST['change'])){
     }
     // two passwords are matches?
     if($newPass == $rePass){
-        echo "yes";
         $flag2 = true;
     }
     // ensure the new and old password are not the same

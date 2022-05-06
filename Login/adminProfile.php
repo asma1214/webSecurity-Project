@@ -1,18 +1,14 @@
-<html>
-    <head>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    </head>
-</html>
 
-<?php
-
-session_start();
-include('editPass1.php');
-
-?>
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+include('editPass1.php');
+include('upload.php');
+include('editProfile.php');
+include('addItem.php');
+include('deleteItem.php')
+?>
 
 <head>
   <meta charset="utf-8">
@@ -21,7 +17,8 @@ include('editPass1.php');
   <title>Admin Profile</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- Favicons -->
   <link href="assets/img/bitcoin.png" rel="icon">
 
@@ -196,18 +193,54 @@ include('editPass1.php');
                           <img src="assets/img/image.png" alt="Profile">
                           <?php } ?>
                       <div class="pt-3 row mb-2">
-                        <form action="upload.php" method="POST" enctype="multipart/form-data">
-                          <!-- <button class="btn btn-primary btn-sm bi bi-upload" type="file" name="upload"></button> -->
-                          <input type="file" class="form-control" name="upload">
+                        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" enctype="multipart/form-data">
+                          <input type="file" class="form-control" name="upload" required>
                           <br>
                           <button class="btn btn-primary btn-sm" type="submit" name="submit">Upload</button>
+                          <button class="btn btn-danger btn-sm" type="submit" name="del">Delete</button>
+
                         </form>   
+                        <?php if(isset($_POST['submit'])){
+                          if($del1 == true){?>
+                          <script>
+                            Swal.fire({
+                                    icon: 'success',
+                                    title: 'Changes',
+                                    text: 'your profile image successfully changed!',
+                                  }).then(function() {
+                                    window.location = "adminProfile.php";});
+                          </script>
+                          <?php } }
+                          else if(isset($_POST['del'])){
+                            if($del2){?>
+                           <script>
+                            Swal.fire({
+                                    icon: 'success',
+                                    title: 'Deleted',
+                                    text: 'your profile image successfully Deleted!',
+                                  }).then(function() {
+                                    window.location = "adminProfile.php";});
+                          </script>
+                          <?php }
+                          else{?>
+                          <script>
+                            Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'you do not have image profile yet!',
+                                  }).then(function() {
+                                    window.location = "adminProfile.php";});
+                          </script>
+                          <?php
+                          }
+                        } ?>
+
                         
                       </div>
                     </div>
                   </div>
                   
-                  <form action="editAdmin.php" method="POST">
+                  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Name</label>
                       <div class="col-md-5 col-lg-5">
@@ -248,6 +281,21 @@ include('editPass1.php');
                       <button type="submit" class="btn btn-primary" name="save">Save Changes</button>
                     </div>
                   </form><!-- End Profile Edit Form -->
+                  <?php if(isset($_POST['save'])){
+                    if($edit){
+                      ?>
+                      <script>
+                            Swal.fire({
+                                    icon: 'success',
+                                    title: 'Success',
+                                    text: 'your profile successfully updated!',
+                                  }).then(function() {
+                                    window.location = "adminProfile.php";});
+                          </script>
+                      <?php
+                    }
+                    ?>
+                    <?php } ?>
 
                 </div>
 
@@ -255,32 +303,32 @@ include('editPass1.php');
 
                   <!-- add item Form -->
                   
-                  <form action="addItem.php" method="POST" enctype="multipart/form-data">
+                  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" enctype="multipart/form-data">
                     <div class="row mb-4">
                       <label class="col-md-4 col-lg-3 col-form-label">Name</label>
                       <div class="col-md-4 col-lg-4">
-                        <input name="name" type="text" class="form-control" id="name">
+                        <input name="name" type="text" class="form-control" id="name" required>
                       </div>
                     </div>
 
                     <div class="row mb-4">
                       <label  class="col-md-4 col-lg-3 col-form-label">Price</label>
                       <div class="col-md-4 col-lg-4">
-                        <input name="price" type="number" class="form-control" id="price">
+                        <input name="price" type="number" class="form-control" id="price" required>
                       </div>
                     </div>
 
                     <div class="row mb-4">
                       <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Quantity</label>
                       <div class="col-md-4 col-lg-4">
-                        <input name="quan" type="number" class="form-control" id="num">
+                        <input name="quan" type="number" class="form-control" id="quan" required>
                       </div>
                     </div>
 
                     <div class="row mb-4">
                       <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">description</label>
                       <div class="col-md-4 col-lg-4">
-                        <textarea name="desc" class="form-control" id="num">
+                        <textarea name="desc" class="form-control" id="num" required>
                         </textarea>
                       </div>
                     </div>
@@ -288,7 +336,7 @@ include('editPass1.php');
                     <div class="row mb-4">
                       <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Image</label>
                     <div class="col-md-4 col-lg-4">
-                      <input type="file" class="form-control" name="upload">
+                      <input type="file" class="form-control" name="upload" required>
 
                         </div>
                         </div>
@@ -296,6 +344,16 @@ include('editPass1.php');
                       <button type="submit" class="btn btn-primary" name="addItem">Add item</button>
                     </div>
                   </form>
+                  <?php if(isset($_POST['addItem'])){ ?>
+                    <script>
+                            Swal.fire({
+                                    icon: 'success',
+                                    title: 'Add',
+                                    text: 'Item has been added successfully!',
+                                  }).then(function() {
+                                    window.location = "adminProfile.php";});
+                          </script>
+                    <?php } ?>
                   <!-- End add item Form -->
 
                 </div>
@@ -303,17 +361,41 @@ include('editPass1.php');
                 <!-- delete item Form -->
                 <div class="tab-pane fade pt-3" id="delete-item">
 
-                  <form action="deleteItem.php" method="POST">
+                  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                     <div class="row mb-4">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Item ID</label>
                       <div class="col-md-4 col-lg-4">
-                        <input name="id" type="number" class="form-control" id="itemId">
+                        <input name="id" type="number" class="form-control" id="itemId" required>
                       </div>
                     </div>
 
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary" name="delete">Delete Item</button>
                     </form>
+                    <?php if(isset($_POST['delete'])){
+                      if($delete){
+                      ?>
+                      <script>
+                            Swal.fire({
+                                    icon: 'success',
+                                    title: 'Delete',
+                                    text: 'Item has been deleted successfully!',
+                                  }).then(function() {
+                                    window.location = "adminProfile.php";});
+                          </script>
+
+                      <?php }else {
+                        ?>
+                        <script>
+                            Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops..',
+                                    text: 'Item ID not available',
+                                  }).then(function() {
+                                    window.location = "adminProfile.php";});
+                          </script>
+                        <?php
+                    } }?>
                     </div>
                 </div>
                   <!-- delete settings Form -->
@@ -326,21 +408,21 @@ include('editPass1.php');
                     <div class="row mb-4">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
                       <div class="col-md-4 col-lg-4">
-                        <input name="currentPass" type="password" class="form-control" id="currentPassword">
+                        <input name="currentPass" type="password" class="form-control" id="currentPassword" required>
                       </div>
                     </div>
 
                     <div class="row mb-4">
                       <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
                       <div class="col-md-4 col-lg-4">
-                        <input name="newPass" type="password" class="form-control" id="newPassword">
+                        <input name="newPass" type="password" class="form-control" id="newPassword" required>
                       </div>
                     </div>
 
                     <div class="row mb-4">
                       <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
                       <div class="col-md-4 col-lg-4">
-                        <input name="rePass" type="password" class="form-control" id="renewPassword">
+                        <input name="rePass" type="password" class="form-control" id="renewPassword" required>
                       </div>
                     </div>
 

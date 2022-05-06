@@ -56,7 +56,7 @@ include('itemQ.php');
         <?php } else {?>
           <li><a href="home.php" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="../Login/adminProfile.php" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Account</span></a></li> 
-        <li><a href=<?php $_SERVER['PHP_SELF'] ?>" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
+        <li><a href="<?php $_SERVER['PHP_SELF'] ?>" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
         <li><a href="home.php#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
         <li><a href="home.php#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> 
         <?php } ?>
