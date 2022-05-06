@@ -90,7 +90,7 @@ include('itemQ.php');
           </form>
           <?php if(isset($_POST['search'])){
 
-                include($_GET['page']);
+                // include($_GET['page']);
 
             $file = $_GET['page'];
             $file = str_replace( array( "../", "..\\" ), "", $file );
@@ -116,7 +116,7 @@ include('itemQ.php');
 
 
                   <a href="assets/img/miners/<?php echo $item['img']; ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo $item['itemName']; ?>"><i class="bx bx-plus"></i></a>
-		    <a class="portfolio-details-lightbox" href="details.php?id=<?php echo $item['id']; ?>"class="portfolio-details-lightbox" data-glightbox="type: external" title="Miner Details"><i class="bx bx-link"></i></a>
+		    <a class="portfolio-details-lightbox" href="details.php?id=<?php echo $item['id']; ?>" class="portfolio-details-lightbox" data-glightbox="type: external" title="Miner Details"><i class="bx bx-link"></i></a>
 
 
                 </div>
