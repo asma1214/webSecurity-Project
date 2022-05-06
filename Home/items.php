@@ -112,7 +112,8 @@ include('itemQ.php');
               <div class="portfolio-info">
                 <h4><?php echo $item['itemName']; ?></h4>
                 <div class="portfolio-links">
-		
+
+
 
                   <a href="assets/img/miners/<?php echo $item['img']; ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo $item['itemName']; ?>"><i class="bx bx-plus"></i></a>
 		    <a class="portfolio-details-lightbox" href="details.php?id=<?php echo $item['id']; ?>"class="portfolio-details-lightbox" data-glightbox="type: external" title="Miner Details"><i class="bx bx-link"></i></a>
