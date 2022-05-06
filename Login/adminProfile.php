@@ -194,7 +194,7 @@ include('deleteItem.php')
                           <?php } ?>
                       <div class="pt-3 row mb-2">
                         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" enctype="multipart/form-data">
-                          <input type="file" class="form-control" name="upload" required>
+                          <input type="file" class="form-control" name="upload">
                           <br>
                           <button class="btn btn-primary btn-sm" type="submit" name="submit">Upload</button>
                           <button class="btn btn-danger btn-sm" type="submit" name="del">Delete</button>
@@ -207,29 +207,26 @@ include('deleteItem.php')
                                     icon: 'success',
                                     title: 'Changes',
                                     text: 'your profile image successfully changed!',
-                                  }).then(function() {
-                                    window.location = "adminProfile.php";});
+                                  });
                           </script>
                           <?php } }
                           else if(isset($_POST['del'])){
-                            if($del2){?>
+                            if($del2 == true){?>
                            <script>
                             Swal.fire({
                                     icon: 'success',
                                     title: 'Deleted',
                                     text: 'your profile image successfully Deleted!',
-                                  }).then(function() {
-                                    window.location = "adminProfile.php";});
+                                  });
                           </script>
                           <?php }
-                          else{?>
+                          else{ ?>
                           <script>
                             Swal.fire({
                                     icon: 'error',
                                     title: 'Oops...',
                                     text: 'you do not have image profile yet!',
-                                  }).then(function() {
-                                    window.location = "adminProfile.php";});
+                                  });
                           </script>
                           <?php
                           }

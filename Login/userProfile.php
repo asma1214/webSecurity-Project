@@ -2,6 +2,10 @@
 <?php
 
 session_start();
+include('upload.php');
+include ('editPass1.php');
+include('editProfile.php');
+
 
 ?>
 <!DOCTYPE html>
@@ -14,7 +18,8 @@ session_start();
   <title>User Profile</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- Favicons -->
   <link href="assets/img/bitcoin.png" rel="icon">
 
@@ -181,17 +186,49 @@ session_start();
                           <img src="assets/img/image.png" alt="Profile">
                           <?php } ?>
                       <div class="pt-3 row mb-2">
-                        <form action="upload.php" method="POST" enctype="multipart/form-data">
-                          <!-- <button class="btn btn-primary btn-sm bi bi-upload" type="file" name="upload"></button> -->
-                          <input type="file" class="form-control" name="upload">
+                      <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" enctype="multipart/form-data">
+                          <input type="file" class="form-control" name="upload" >
                           <br>
                           <button class="btn btn-primary btn-sm" type="submit" name="submit">Upload</button>
-                        </form>   
+                          <button class="btn btn-danger btn-sm" type="submit" name="del">Delete</button>
+
+                        </form> 
+                        <?php if(isset($_POST['submit'])){
+                          if($del1 == true){?>
+                          <script>
+                            Swal.fire({
+                                    icon: 'success',
+                                    title: 'Changes',
+                                    text: 'your profile image successfully changed!',
+                                  });
+                          </script>
+                          <?php } }
+                          else if(isset($_POST['del'])){
+                            if($del2 == true){?>
+                           <script>
+                            Swal.fire({
+                                    icon: 'success',
+                                    title: 'Deleted',
+                                    text: 'your profile image successfully Deleted!',
+                                  });
+                          </script>
+                          <?php }
+                          else{?>
+                          <script>
+                            Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'you do not have image profile yet!',
+                                  });
+                          </script>
+                          <?php
+                          }
+                        } ?>  
                         
                       </div>
                     </div>
                   </div>
-                  <form action="editProfile.php" method="POST">
+                  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Name</label>
                       <div class="col-md-5 col-lg-5">
@@ -207,9 +244,23 @@ session_start();
                     </div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary" name="edit" >Save Changes</button>
+                      <button type="submit" class="btn btn-primary" name="save" >Save Changes</button>
                     </div>
                   </form><!-- End Profile Edit Form -->
+                  <?php if(isset($_POST['save'])){
+                    if($edit){
+                      ?>
+                      <script>
+                            Swal.fire({
+                                    icon: 'success',
+                                    title: 'Success',
+                                    text: 'your profile successfully updated!',
+                                  });
+                          </script>
+                      <?php
+                    }
+                    ?>
+                    <?php } ?>
 
                 </div>
 
@@ -220,7 +271,7 @@ session_start();
                
                   <!-- Change Password Form -->
                 <div class="tab-pane fade pt-3" id="profile-change-password">
-                  <form action="editPass1.php" method="POST">
+                  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                     <div class="row mb-4">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
                       <div class="col-md-4 col-lg-4">
@@ -244,9 +295,59 @@ session_start();
                     <div class="errorMsg col-12"><?php if(isset($Error)) echo $Error; ?></div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary"  value="submit" name="change">Change Passwor</button>
+                      <button type="submit" class="btn btn-primary"  name="change">Change Password</button>
                     </div>
                   </form><!-- End Change Password Form -->
+                  <?php
+                  if(isset($_POST['change'])){
+                   if(!$flag3){ ?>
+                    <script>
+                        // alert('your olad password and new password are the same!');
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Oops...',
+                            text: 'your old and new password are the same!',
+                          });
+                </script>
+                <?php }
+                if(!$flag2){ 
+                  ?>
+                  <script>
+                    Swal.fire({
+                            icon: 'warning',
+                            title: 'Are you sure?',
+                            text: 'The two given passwords do not match!',
+                          });
+                  </script>
+                  <?php
+                      }
+                      if (!$flag1){
+                        ?>
+                        <script>
+                    Swal.fire({
+                            icon: 'error',
+                            title: 'oh-oh..',
+                            text: 'incorrect current password!',
+                          });
+                  </script>
+
+
+              <?php
+               }
+               else if($flag1 && $flag2 && $flag3) {
+
+                 ?>
+                 <script>
+                    Swal.fire({
+                            icon: 'success',
+                            title: 'Changed',
+                            text: 'your password sucessfully changed!',
+                          });
+                  </script>
+                 <?php
+               }
+               
+               }?>
 
                 </div>
 

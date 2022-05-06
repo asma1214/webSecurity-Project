@@ -1,40 +1,37 @@
 <?php
 session_start();
 // $path="lol";
+$del1=false;
 if(isset($_POST['submit'])){
-            $del1=false;
-            $del2=false;
-        if(isset($_FILES['upload'])){
-            $upload_dir = "assets/img/userImg/";
-            $file_name = $_FILES["upload"]["name"];
-            $uploaded_type = $_FILES[ 'upload' ][ 'type' ];
-            $uploaded_size = $_FILES[ 'upload' ][ 'size' ];
+    if(isset($_FILES['upload'])){
+        $upload_dir = "assets/img/userImg/";
+        $file_name = $_FILES["upload"]["name"];
+        $uploaded_type = $_FILES[ 'upload' ][ 'type' ];
+        $uploaded_size = $_FILES[ 'upload' ][ 'size' ];
         
-            // echo $file_name;
-            $path = pathinfo($file_name);
-            $newFileName =$_SESSION['username'];
-            $ext = $path['extension'];
-            $tmp_name = $_FILES['upload']['tmp_name'];
+        // echo $file_name;
+        $path = pathinfo($file_name);
+        $newFileName =$_SESSION['username'];
+        $ext = $path['extension'];
+        $tmp_name = $_FILES['upload']['tmp_name'];
             $fullPath = $upload_dir . $newFileName."." .$ext;
             $FileNoExt=$upload_dir . $newFileName; 
             $moved = move_uploaded_file($tmp_name, $fullPath);
             if( $moved ) {
                 $del1=true;
             }
-          
+            
         }
-}
-else if(isset($_POST['del'])){
-    $file_name = $_FILES["upload"]["name"];
-    if(isset($file_name)){
-        $upload_dir = "assets/img/userImg/";
-        $newFileName =$_SESSION['username'];
-        $FileNoExt=$upload_dir . $newFileName; 
-        //start here to remove 
-        array_map('unlink', glob($FileNoExt.".*"));
-        //till here to remove 
-        $del2= true;
-}
+    }
+    else if(isset($_POST['del'])){
+    // $del2=false;
+    $file= "assets/img/userImg/" . $_SESSION['username'] . ".{jpg,png,jpe}";
+    $result1 = glob ($file ,GLOB_BRACE);
+    $FileNoExt =  $result1[0];
+    if(!(is_null($FileNoExt))){
+        unlink($FileNoExt);
+        $del2 = true;
+    }
 
 }
 
