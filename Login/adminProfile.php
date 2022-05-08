@@ -56,7 +56,7 @@ include('deleteItem.php')
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="../Home/home.php" class="logo d-flex align-items-center">
+      <a href="../Home/index.php" class="logo d-flex align-items-center">
         <img src="assets/img/bitcoin.png" alt="">
         <span class="d-none d-lg-block">Bitmain</span>
       </a>
@@ -129,7 +129,7 @@ include('deleteItem.php')
       <h1>Profile</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../Home/home.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="../Home/index.php">Home</a></li>
           <li class="breadcrumb-item active"><a href=<?php $_SERVER['PHP_SELF'] ?>>Profile</a></li>
         </ol>
       </nav>

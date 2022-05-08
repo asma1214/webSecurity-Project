@@ -34,7 +34,7 @@
           session_start();
           //insert data into database
         $query = "INSERT INTO users (ID, name, username, password, email, Pr) VALUES ('$ID', '$name' , '$username', '$password' , '$email' , 'u' )";
-        define('ROOT_URL', '../Home/home.php');
+        define('ROOT_URL', '../Home/index.php');
         if(mysqli_query($conn, $query)){
           $_SESSION['userId'] = $ID;
           $_SESSION['name'] = $name;
