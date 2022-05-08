@@ -11,7 +11,7 @@
         mysqli_stmt_bind_param($stmt , 's' , htmlspecialchars($_POST['username']));
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
-        define('ROOT_URL', '../Home/home.php');
+        define('ROOT_URL', '../Home/index.php');
         $row = mysqli_fetch_assoc($result);
             if(($_POST['username'] == $row['username']) && (htmlspecialchars($_POST['password']) == $row['password'])){
                 $_SESSION['userId'] = $row['ID'];
