@@ -24,7 +24,7 @@
         else{
           session_start();
         $query = "UPDATE users set   WHERE id = {$update_id}";
-        define('ROOT_URL', '../Home/index.php');
+        define('ROOT_URL', '../index.php');
         if(mysqli_query($conn, $query)){
           $_SESSION['userId'] = $ID;
           $_SESSION['name'] = $name;
