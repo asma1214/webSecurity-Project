@@ -102,9 +102,15 @@ include('itemQ.php');
 
 
     
+<?if(isset($_POST['search'])) {
+  // while($row = mysqli_fetch_assoc($res)){ 
+    echo "hi";
+
+  // }
+}
 
 
-<?php foreach($items as $item) : ?>
+ else { foreach($items as $item) :?>
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-4 col-md-6 portfolio-item ">
             <div class="portfolio-wrap">
@@ -123,8 +129,8 @@ include('itemQ.php');
               </div>
             </div>
           </div>
-<?php endforeach; ?>	   
-</div>
+          <?php endforeach; }?>	   
+        </div>
 </div>
     </section><!-- End Miners Section -->
 
