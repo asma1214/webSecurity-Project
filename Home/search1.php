@@ -21,7 +21,7 @@ else {
 
   //Run the prepared statment
   mysqli_stmt_execute($stmt);
-  $res = mysqli_stmt_get_result($stmt);
+  $result = mysqli_stmt_get_result($stmt);
   // $items = mysqli_fetch_assoc($res);
 
 

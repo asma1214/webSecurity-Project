@@ -18,15 +18,15 @@ $res = mysqli_stmt_get_result($stmt);
 // }
 
 // else{
-    // $row = mysqli_fetch_assoc($res);
-    // foreach($row as $e){
-    //     echo $e['itemName'];
-    // }
-    while($row = mysqli_fetch_assoc($res)){
-        echo $row['itemName'] . "<br>";
-        echo $row['img'] . "<br>";
-
+    $row = mysqli_fetch_all($res);
+    foreach($row as $e){
+        echo $e['itemName'];
     }
+    // while($row = mysqli_fetch_assoc($res)){
+    //     echo $row['itemName'] . "<br>";
+    //     echo $row['img'] . "<br>";
+
+    // }
     
 //   mysqli_stmt_bind_param($stmt , 's' , "%$search%");
 //   mysqli_stmt_execute($stmt);

@@ -102,34 +102,28 @@ include('itemQ.php');
 
 
     
-<?if(isset($_POST['search'])) {
-  // while($row = mysqli_fetch_assoc($res)){ 
-    echo "hi";
-
-  // }
-}
 
 
- else { foreach($items as $item) :?>
+  <?php while($items = mysqli_fetch_assoc($result)){  ?>
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-4 col-md-6 portfolio-item ">
             <div class="portfolio-wrap">
-              <img src="assets/img/miners/<?php echo $item['img']; ?>" class="img-fluid" alt="">
+              <img src="assets/img/miners/<?php echo $items['img']; ?>" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4><?php echo $item['itemName']; ?></h4>
+                <h4><?php echo $items['itemName']; ?></h4>
                 <div class="portfolio-links">
 
 
 
-                  <a href="assets/img/miners/<?php echo $item['img']; ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo $item['itemName']; ?>"><i class="bx bx-plus"></i></a>
-		    <a class="portfolio-details-lightbox" href="details.php?id=<?php echo $item['id']; ?>" class="portfolio-details-lightbox" data-glightbox="type: external" title="Miner Details"><i class="bx bx-link"></i></a>
+                  <a href="assets/img/miners/<?php echo $items['img']; ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo $items['itemName']; ?>"><i class="bx bx-plus"></i></a>
+		    <a class="portfolio-details-lightbox" href="details.php?id=<?php echo $items['id']; ?>" class="portfolio-details-lightbox" data-glightbox="type: external" title="Miner Details"><i class="bx bx-link"></i></a>
 
 
                 </div>
               </div>
             </div>
           </div>
-          <?php endforeach; }?>	   
+          <?php  }?>	   
         </div>
 </div>
     </section><!-- End Miners Section -->
