@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
     }
     else if(isset($_POST['del'])){
     // $del2=false;
-    $file= "assets/img/userImg/" . $_SESSION['username'] . ".{jpg,png,jpe}";
+    $file= "assets/img/userImg/" . $_SESSION['username'] . ".*";
     $result1 = glob ($file ,GLOB_BRACE);
     $FileNoExt =  $result1[0];
     if(!(is_null($FileNoExt))){
