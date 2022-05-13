@@ -13,7 +13,8 @@
         $result = mysqli_stmt_get_result($stmt);
         define('ROOT_URL', '../index.php');
         $row = mysqli_fetch_assoc($result);
-            if(($_POST['username'] == $row['username']) && (htmlspecialchars($_POST['password']) == $row['password'])){
+            if(($_POST['username'] == $row['username']) && (password_verify(htmlspecialchars($_POST['password']), $row['password']))){
+                // password_verify(htmlspecialchars($_POST['password']), $row['password'])
                 $_SESSION['userId'] = $row['ID'];
                 $_SESSION['name'] = $row['name'];
                 $_SESSION['username'] = $row['username'];

@@ -88,7 +88,7 @@ session_start();
 
                   <div class="col-12">
                       <label for="yourEmail" class="form-label">Your Name</label>
-                      <input type="text" name="name" class="form-control" id="yourName" required>
+                      <input type="text" name="name" class="form-control" id="yourName" value="<?php echo htmlspecialchars($name);?>" required>
                       <div class="invalid-feedback">Please write your name </div>
                     </div>
 
@@ -98,7 +98,7 @@ session_start();
                       <label for="yourUsername" class="form-label">Username</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
+                        <input type="text" name="username" class="form-control" id="yourUsername" value="<?php echo htmlspecialchars($username);?>" required>
                         <div class="invalid-feedback">Please choose a username.</div>
                       </div>
                     </div>
@@ -107,7 +107,7 @@ session_start();
                      <br> 
                     <div class="col-12">
                       <label for="yourEmail" class="form-label">Your Email</label>
-                      <input type="email" name="email" class="form-control" id="yourEmail" required>
+                      <input type="email" name="email" class="form-control" id="yourEmail" value="<?php echo htmlspecialchars($email);?>" required>
                       <div class="invalid-feedback">Please enter a valid Email adddress!</div>
                     </div>
                     <div class="errorMsg col-12"><?php if(isset($emailError)) echo $emailError; ?></div>
@@ -119,16 +119,14 @@ session_start();
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
-                        
-                       <br>
+                    <div class="errorMsg col-12"><?php if(isset($uppError)) echo $uppError; 
+                    else if(isset($numError)) echo $numError; 
+                    else if(isset($specError)) echo $specError;
+                    else if(isset($numError)) echo $numError;
+                    else if(isset($lenError)) echo $lenError;
+                    else if(isset($userError)) echo $userError;?></div>
 
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
-                        <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
-                        <div class="invalid-feedback">You must agree before submitting.</div>
-                      </div>
-                    </div> <br>
+                       <br>
                     <div class="col-12">
                       <button class="btn btn-primary w-100" type="submit" name="submit">Create Account</button>
                     </div>

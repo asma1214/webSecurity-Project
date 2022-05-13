@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 28, 2022 at 04:35 AM
+-- Generation Time: May 13, 2022 at 09:00 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -70,14 +70,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `name`, `username`, `password`, `email`, `Pr`) VALUES
-('3623', 'Noor', 'noor_h', 'Asld120!!@$', 'noorH@gmail.com', 'u'),
-('3786', 'Ahmad', 'ahmd_906', 'Fghj1234!', 'ahmd699@gmail.com', 'a'),
-('4347', 'asma1', 'asma11', 'as!!', 'asma11@gmail.com', 'u'),
-('4796', 'alghadeer', 'alghadeer_SH', 'abnm1230!!', 'alghadeer90@gmail.com', 'u'),
-('4890', 'bushra', 'bushra_12', 'bb11ms!!', 'bushra12@gmail.com', 'u'),
-('4908', 'layan', 'layan_m', 'llmm33!', 'layanM@gmail.com', 'u'),
-('5771', 'Adam', 'Adam@600', 'A600@mad!!', 'Adam_600@hotmail.com', 'a'),
-('7645', 'safwan', 'safwan700', 'backscho11!', 'Safwan_56@gmail.com', 'a');
+('1951', 'bushra', 'bushra_12', '$2y$10$vlJRiWniEZa1e4A62vALXuifn4BeIUvCKLYPBTC/lQkcYGOjggs82', 'bushra12@gmail.com', 'u'),
+('2741', 'Admin', 'Admin', '$2y$10$ZH9wMHnpDfIbj4MiWfUPzeav3Pt0CxCGA6hd9.GQlFo40WaIgWG1K', 'ad@gmail.com', 'a'),
+('5695', 'alghadeer', 'alghadeer_SH', '$2y$10$jdYYSz8GtcRolQDgz9GoI.u1FIsJXG1A/ulL/6Di9xBcpczF3VHd6', 'alghadeer90@gmail.com', 'u'),
+('6318', 'layan', 'layan_m', '$2y$10$4grblDXd0HCg67Y7TMtWzemrRZjbEfYntQBURT8.YIGjy9n/s7PkG', 'layanM@gmail.com', 'u'),
+('8089', 'Noor', 'noor_h', '$2y$10$gvdoBRq1TN.yavHz6l/1ZutqVKot07pym4edy65Tu9Xl/XyCtDT/a', 'noorH@gmail.com', 'u'),
+('9994', 'asma', 'asma11', '$2y$10$G9widkF6ML8X.R4.OpOUnO2.VPK3QZeeigamiv9s8DPUM5WHuKTU2', 'asma11@gmail.com', 'a');
 
 --
 -- Indexes for dumped tables
@@ -103,7 +101,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `tools`
 --
 ALTER TABLE `tools`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

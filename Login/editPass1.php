@@ -26,7 +26,8 @@ if(isset($_POST['change'])){
     $dbPass = $row['password'];
     
     // is your current password same as db password?
-    if($currentPass == $dbPass){
+    //password_verify($currentPass, $dbPass)
+    if(password_verify($currentPass, $dbPass)){
         $flag1 = true;
     }
     // two passwords are matches?
@@ -34,12 +35,14 @@ if(isset($_POST['change'])){
         $flag2 = true;
     }
     // ensure the new and old password are not the same
-    if(($flag2) && ($newPass != $dbPass)){
+    //password_verify($newPass, $dbPass)
+    if(($flag2) && (!password_verify($newPass, $dbPass))){
         $flag3 = true;
     }
     // all conditions are met? then change the password
     if($flag1 && $flag2 && $flag3){
-        $query = "UPDATE users SET password='$newPass' WHERE username ='$username'";
+        $hashPass = password_hash($newPass, PASSWORD_DEFAULT);
+        $query = "UPDATE users SET password='$hashPass' WHERE username ='$username'";
         if(mysqli_query($conn, $query)){
             ?>
             <?php
