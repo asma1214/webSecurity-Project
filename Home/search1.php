@@ -35,6 +35,23 @@ else {
 
             
         //Count Rows
+
+  //Count Rows
+  // $count =mysqli_num_rows($result);
+  // //Check whether food available of not
+  // if($count>0)
+  // {
+  //     echo"<div class='error'> <h3><strong> Results for:</strong>$search </h3></div> "; 
+  //   while($item=mysqli_fetch_assoc($result))
+  //   {
+      
+  //   }
+  // }
+  // else
+  //     {
+  //         echo"<div class='error'> <h3><strong>No results for:</strong>$search </h3><br>Try checking your spelling or use more general terms</div> "; 
+  //     }
+    
         
           
 
