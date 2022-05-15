@@ -95,13 +95,7 @@
                     </div>
                     <div class="errorMsg col-12"><?php if(isset($Error)) echo $Error; ?></div>
                     <div class="col-12">
-                    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfWJ8kfAAAAAIib1U7FtTn7W-E5lij2m_yiZ0Pd"></script>
-                    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LemFM0fAAAAAB9oHoNAd9na4B5eVXy1W6aflaSs"></script>
-                    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfDEc0fAAAAAJYsXBljXdxmVlLUsGzZ7IbUftHz"></script>
-                    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ld7F80fAAAAAGhPkLS1Z_3zrIA6piCNCiYnwOFC"></script>
-                    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ld7F80fAAAAAGhPkLS1Z_3zrIA6piCNCiYnwOFC"></script>
-                    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ld7F80fAAAAAGhPkLS1Z_3zrIA6piCNCiYnwOFC"></script>
-
+              
 
                     <input class="btn btn-primary w-100" type="submit" value="Login" name="submit">
                       <!-- <button class="btn btn-primary w-100" type="submit">Login</button> -->
