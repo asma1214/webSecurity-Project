@@ -51,26 +51,27 @@ include('itemQ.php');
   <header id="header" class="d-flex flex-column justify-content-center">
     <nav id="navbar" class="navbar nav-menu">
       <ul>
-      <?php if(!isset($_SESSION)){ ?>
+      <?php if(!isset($_SESSION['Pr'])){ ?>
           <li><a href="../index.php" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="../Login/loginPage.php" class="nav-link scrollto"><i class="bx bx-log-in-circle"></i> <span>Login</span></a></li> 
           <li><a href="<?php $_SERVER['PHP_SELF'] ?>" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
           <li><a href="../index.php#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
           <li><a href="../index.php#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> 
-          <?php } else if($_SESSION['Pr'] == 'u') {?>
+     
+     <?php } else if($_SESSION['Pr'] == 'u') {?>
       
-          <li><a href="../index.php" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="../Login/userProfile.php" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Account</span></a></li> 
-          <li><a href="<?php $_SERVER['PHP_SELF'] ?>" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
-          <li><a href="index.php#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-          <li><a href="index.php#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> 
-        <?php } else if($_SESSION['Pr'] == 'a'){?>
-          <li><a href="../index.php" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="../Login/adminProfile.php" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Account</span></a></li> 
-          <li><a href="<?php $_SERVER['PHP_SELF'] ?>" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
-          <li><a href="../index.php#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-          <li><a href="../index.php#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> 
-        <?php } ?>v
+      <li><a href="../index.php" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
+      <li><a href="../Login/userProfile.php" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Account</span></a></li> 
+      <li><a href="<?php $_SERVER['PHP_SELF'] ?>" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
+      <li><a href="index.php#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+      <li><a href="index.php#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> 
+    <?php } else if($_SESSION['Pr'] == 'a'){?>
+      <li><a href="../index.php" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
+      <li><a href="../Login/adminProfile.php" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Account</span></a></li> 
+      <li><a href="<?php $_SERVER['PHP_SELF'] ?>" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
+      <li><a href="../index.php#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+      <li><a href="../index.php#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> 
+    <?php } ?>
         </ul>
     </nav>
 

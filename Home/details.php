@@ -1,6 +1,6 @@
 <?php
    include('../connectDB.php'); 
-
+  session_start();
  	$id = mysqli_real_escape_string($conn, $_GET['id']);
 	//create a query
 	$query = 'SELECT * FROM tools WHERE id = '.$id;
