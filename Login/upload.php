@@ -1,5 +1,9 @@
 <?php
-session_start();
+
+if(!isset($_SESSION)) 
+{ 
+	session_start(); // Access the existing session.
+} 
 // $path="lol";
 $del1=false;
 if(isset($_POST['submit'])){

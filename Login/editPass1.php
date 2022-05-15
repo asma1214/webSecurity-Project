@@ -1,7 +1,11 @@
 <html>
 
 <?php
-session_start();
+
+if(!isset($_SESSION)) 
+{ 
+	session_start(); // Access the existing session.
+} 
 define('USER', 'userProfile.php');
 define('ADMIN', 'adminProfile.php');
 

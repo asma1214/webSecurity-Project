@@ -1,7 +1,11 @@
 <?php
     require ('../connectDB.php');
     if(isset($_POST['submit'])){
-    session_start();
+  
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); // Access the existing session.
+    } 
     $stmt = mysqli_stmt_init($conn);
     $sql = 'SELECT * FROM users WHERE username = ?';
     if (!mysqli_stmt_prepare($stmt, $sql)) {
