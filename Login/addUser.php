@@ -14,7 +14,7 @@
         $email = filter_var($email, FILTER_VALIDATE_EMAIL);
         if ($email === false) {
           //exit('Invalid Email');
-          $specError = "Email is invalid";
+          $emailError = "Email is invalid";
           //define('ROOT_URL1', 'registerPage.php');
           //header('Location: ' . ROOT_URL1);
         }
