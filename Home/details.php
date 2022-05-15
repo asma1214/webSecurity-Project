@@ -84,10 +84,11 @@
               </p>
               
             </div>
+            <?php if(isset($_SESSION['Pr'])){ ?>
             <div class="portfolio-description">
               <ul>
                 <li><strong>Price</strong>: <?php echo $tool['price']; ?>$</li>
-                <li><strong>Quagntity</strong>: <?php echo $tool['quantity'];?></li>
+                <li><strong>Quantity</strong>: <?php echo $tool['quantity'];?></li>
 
                 
               </ul>
@@ -100,11 +101,11 @@
 </form>
 
             </div>
+            <?php } ?>
           </div>
-
         </div>
-
       </div>
+    </div>
     </section><!-- End Portfolio Details Section -->
 
   </main><!-- End #main -->
