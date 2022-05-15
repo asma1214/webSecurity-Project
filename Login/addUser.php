@@ -12,6 +12,11 @@
         // $hashPass= password_hash($password, PASSWORD_DEFAULT);
         $email = mysqli_real_escape_string($conn, htmlspecialchars($_POST['email']));
         $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+        if ($email === false) {
+          //exit('Invalid Email');
+          define('ROOT_URL1', 'registerPage.php');
+          header('Location: ' . ROOT_URL1);
+        }
         //validate password
         $uppercase = preg_match('@[A-Z]@', $password); // must include at least one upper case letter
         // $lowercase = preg_match('@[a-z]@', $password); // must include at least one lower case letter
