@@ -12,11 +12,13 @@
         echo "Failed";   
     }
     else {
+        
         mysqli_stmt_bind_param($stmt , 's' , htmlspecialchars($_POST['username']));
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         define('ROOT_URL', '../index.php');
         $row = mysqli_fetch_assoc($result);
+        echo $row['username']; 
             if(($_POST['username'] == $row['username']) && (password_verify(htmlspecialchars($_POST['password']), $row['password']))){
                 // password_verify(htmlspecialchars($_POST['password']), $row['password'])
                 $_SESSION['userId'] = $row['ID'];

@@ -17,16 +17,7 @@ include('deleteItem.php')
 { 
 	session_start(); // Access the existing session.
 } 
-  $Pr = $_SESSION['Pr']; 
-  if ($Pr == 'a') {
-    
-    header('location: adminProfile.php');
-    exit;
-    
-  }
-  if($Pr != 'a' ){  
-    die('Only accessible by admins!'); 
-    } 
+ 
   
 ?>
 
