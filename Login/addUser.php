@@ -51,7 +51,9 @@
           $usernameError = "username are already taken";
         }
         if(mysqli_num_rows($result3)>0){
-          $emailError = "This email is exist";
+          if ($email === false) { }
+          else {$emailError = "This email is exist";}
+          
         }
         else{
           session_start();
