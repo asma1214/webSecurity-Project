@@ -1,5 +1,9 @@
 <?php
-session_start();
+
+if(!isset($_SESSION)) 
+{ 
+	session_start(); // Access the existing session.
+} 
 require ('../connectDB.php');
 // echo "yes";
 if(isset($_POST['save'])){

@@ -1,5 +1,10 @@
 <?php
-session_start(); // Access the existing session.
+
+
+if(!isset($_SESSION)) 
+{ 
+	session_start(); // Access the existing session.
+} 
 
 // If no session variable exists, redirect the user:
 if (! (isset($_SESSION['username']) || isset($_SESSION['userId']))) {
