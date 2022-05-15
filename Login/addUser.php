@@ -14,8 +14,9 @@
         $email = filter_var($email, FILTER_VALIDATE_EMAIL);
         if ($email === false) {
           //exit('Invalid Email');
-          define('ROOT_URL1', 'registerPage.php');
-          header('Location: ' . ROOT_URL1);
+          $specError = "Email is invalid";
+          //define('ROOT_URL1', 'registerPage.php');
+          //header('Location: ' . ROOT_URL1);
         }
         //validate password
         $uppercase = preg_match('@[A-Z]@', $password); // must include at least one upper case letter
