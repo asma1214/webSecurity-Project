@@ -87,7 +87,7 @@
             <div class="portfolio-description">
               <ul>
                 <li><strong>Price</strong>: <?php echo $tool['price']; ?>$</li>
-                <li><strong>Quantity</strong>: <?php echo $tool['quantity'];?></li>
+                <li><strong>Quagntity</strong>: <?php echo $tool['quantity'];?></li>
 
                 
               </ul>
