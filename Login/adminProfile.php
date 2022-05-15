@@ -129,7 +129,7 @@ include('deleteItem.php')
       <h1>Profile</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href=".../index.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
           <li class="breadcrumb-item active"><a href=<?php $_SERVER['PHP_SELF'] ?>>Profile</a></li>
         </ol>
       </nav>

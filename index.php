@@ -43,14 +43,12 @@ session_start();
     
     <nav id="navbar" class="navbar nav-menu">
       <ul>
-      <?php if(isset($_SESSION['userId'])){?>
         <li><a href="home.php" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="#about" class="nav-link scrollto"><i class="bx bx-question-mark"></i> <span>About</span></a></li>
         <li><a href="Home/items.php" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
         <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
         <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
       </ul>
-      <?php } ?>
     </nav> 
     <!-- .nav-menu  -->
 
