@@ -10,6 +10,22 @@ include('addItem.php');
 include('deleteItem.php')
 ?>
 
+
+<?php
+  session_name('MyAdminSession');
+  if(!isset($_SESSION)) 
+{ 
+	session_start(); // Access the existing session.
+} 
+  $Pr = $_SESSION['Pr']; 
+  if ($Pr == 'a') {
+    
+    header('location: adminProfile.php');
+    exit;
+    
+  }
+?>
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
