@@ -22,37 +22,17 @@ else {
   //Run the prepared statment
   mysqli_stmt_execute($stmt);
   $result = mysqli_stmt_get_result($stmt);
-  // $items = mysqli_fetch_assoc($res);
-
-
-}
-//Execute the query
-// $result = mysqli_query($conn, $sql);
-    
-//Count Rows
-// $items =mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-
-            
-        //Count Rows
-
-  //Count Rows
-  // $count =mysqli_num_rows($result);
-  // //Check whether food available of not
-  // if($count>0)
-  // {
-  //     echo"<div class='error'> <h3><strong> Results for:</strong>$search </h3></div> "; 
-  //   while($item=mysqli_fetch_assoc($result))
-  //   {
+  
+  $count =mysqli_num_rows($result);
+  if($count>0)
+  {
+      echo"<div class='error'> <h3><strong> Results for:</strong>$s </h3></div> ";  
+  }
+  else
+      {
+          echo"<div class='error'> <h3><strong>No results for:</strong>$s </h3><br>Try checking your spelling or use more general terms</div> "; 
+      }
       
-  //   }
-  // }
-  // else
-  //     {
-  //         echo"<div class='error'> <h3><strong>No results for:</strong>$search </h3><br>Try checking your spelling or use more general terms</div> "; 
-  //     }
-    
-        
-          
+}        
 
 ?>
