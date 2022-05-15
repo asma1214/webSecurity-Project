@@ -11,6 +11,7 @@
         $password = mysqli_real_escape_string($conn,htmlspecialchars($_POST['password']));
         // $hashPass= password_hash($password, PASSWORD_DEFAULT);
         $email = mysqli_real_escape_string($conn, htmlspecialchars($_POST['email']));
+        $email = filter_var($email, FILTER_VALIDATE_EMAIL);
         //validate password
         $uppercase = preg_match('@[A-Z]@', $password); // must include at least one upper case letter
         // $lowercase = preg_match('@[a-z]@', $password); // must include at least one lower case letter
