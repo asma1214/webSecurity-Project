@@ -43,7 +43,7 @@ session_start();
     
     <nav id="navbar" class="navbar nav-menu">
       <ul>
-        <li><a href="home.php" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="<?php $_SERVER['PHP_SELF'] ?>" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="#about" class="nav-link scrollto"><i class="bx bx-question-mark"></i> <span>About</span></a></li>
         <li><a href="Home/items.php" class="nav-link scrollto"><i class="bx bxl-bitcoin"></i> <span>Miners</span></a></li>
         <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
