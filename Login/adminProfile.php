@@ -12,7 +12,7 @@ include('deleteItem.php')
 
 
 <?php
-  session_name('MyAdminSession');
+  
   if(!isset($_SESSION)) 
 { 
 	session_start(); // Access the existing session.
@@ -24,7 +24,12 @@ include('deleteItem.php')
     exit;
     
   }
+  if($Pr != 'a' ){  
+    die('Only accessible by admins!'); 
+    } 
+  
 ?>
+
 
 <head>
   <meta charset="utf-8">
